@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIME by Asma - Catering & Food Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body lang="en" dir="ltr">
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Scroll to top"></button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="https://i.ibb.co/VpqxrBy2/prime-logo-white.png" alt="PRIME Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#catering" class="lang-en">Catering</a><a href="#catering" class="lang-ar">الضيافة</a></li>
+                <li><a href="#white-label" class="lang-en">White Label</a><a href="#white-label" class="lang-ar">خدمة العلامة البيضاء</a></li>
+                <li><a href="#supplying" class="lang-en">Hotels & Cafés</a><a href="#supplying" class="lang-ar">المقاهي والفنادق</a></li>
+                <li><a href="#contact" class="lang-en">Contact Us</a><a href="#contact" class="lang-ar">تواصل معنا</a></li>
+            </ul>
+            <div class="nav-mobile-right">
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    <span class="lang-en">العربية</span>
+                    <span class="lang-ar">English</span>
+                </button>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#catering" onclick="closeMobileMenu()" class="lang-en">Catering</a><a href="#catering" onclick="closeMobileMenu()" class="lang-ar">الضيافة</a></li>
+            <li><a href="#white-label" onclick="closeMobileMenu()" class="lang-en">White Label</a><a href="#white-label" onclick="closeMobileMenu()" class="lang-ar">خدمة العلامة البيضاء</a></li>
+            <li><a href="#supplying" onclick="closeMobileMenu()" class="lang-en">Hotels & Cafés</a><a href="#supplying" onclick="closeMobileMenu()" class="lang-ar">المقاهي والفنادق</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()" class="lang-en">Contact Us</a><a href="#contact" onclick="closeMobileMenu()" class="lang-ar">تواصل معنا</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" alt="PRIME Catering" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-title-main">PRIME</span>
+                    <span class="hero-title-sub lang-en">by Asma</span>
+                    <span class="hero-title-sub lang-ar">من أسماء</span>
+                </h1>
+                <p class="hero-description lang-en">Elevating culinary experiences with precision, passion, and unparalleled service</p>
+                <p class="hero-description lang-ar">نرتقي بالتجارب الطهوية بدقة وشغف وخدمة لا مثيل لها</p>
+                <div class="hero-cta">
+                    <a href="#services" class="cta-button primary">
+                        <span class="lang-en">Discover Our Services</span>
+                        <span class="lang-ar">اكتشف خدماتنا</span>
+                    </a>
+                    <a href="#contact" class="cta-button secondary">
+                        <span class="lang-en">Get In Touch</span>
+                        <span class="lang-ar">تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title lang-en">What We Do</h2>
+            <h2 class="section-title lang-ar">خدماتنا</h2>
+            
+            <!-- Catering Services -->
+            <div id="catering" class="service-item">
+                <div class="service-content">
+                    <h3 class="lang-en">Catering Services</h3>
+                    <h3 class="lang-ar">خدمات الضيافة</h3>
+                    
+                    <p class="lang-en">Full-scale food production for any occasion — customized, punctual, and seamless.</p>
+                    <p class="lang-ar">نجهز لك الأكل كامل لأي مناسبة، بطريقة مرتبة، على الوقت، وبشكل يناسب ذوقك.</p>
+                    
+                    <ul class="service-features lang-en">
+                        <li><strong>Corporate Catering:</strong> Daily meals, executive meetings, staff events</li>
+                        <li><strong>Event Catering:</strong> Launches, weddings, private gatherings, VIP functions</li>
+                        <li><strong>Tailored Menus:</strong> Designed around your theme, crowd, or brand</li>
+                    </ul>
+                    
+                    <ul class="service-features lang-ar">
+                        <li><strong>ضيافة الشركات:</strong> وجبات يومية، اجتماعات رسمية، فعاليات للموظفين</li>
+                        <li><strong>ضيافة المناسبات:</strong> حفلات، تجمعات خاصة، مناسبات كبار الشخصيات</li>
+                        <li><strong>منيو مخصص:</strong> مصمم حسب فكرتك وجمهورك وبراندك</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Catering Services">
+                </div>
+            </div>
+
+            <!-- White Label Manufacturing -->
+            <div id="white-label" class="service-item">
+                <div class="service-content">
+                    <h3 class="lang-en">White Label</h3>
+                    <h3 class="lang-ar">خدمة العلامة البيضاء</h3>
+                    
+                    <p class="lang-en">Have the recipe or the concept? Let us bring it to life — under <strong>your brand name</strong>.</p>
+                    <p class="lang-ar">عندك وصفة أو فكرة؟ حنّا نقدر نطلعها للنور باسم <strong>البراند حقك</strong>.</p>
+                    
+                    <ul class="service-features lang-en">
+                        <li>Full production & packaging, made-to-spec</li>
+                        <li>Ideal for food brands, influencers, and private-label ventures</li>
+                        <li>Confidential, reliable, and ready to scale with you</li>
+                    </ul>
+                    
+                    <ul class="service-features lang-ar">
+                        <li>ننتج ونخصص لك المنتج كامل حسب الطلب</li>
+                        <li>مناسب لأصحاب البراندات الغذائية، المشاهير، والمشاريع الخاصة</li>
+                        <li>نجهز لك منيو على حسب فكرتك ومخصصة لك</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1628591667015-652ca2f54d4b" alt="White Label Manufacturing">
+                </div>
+            </div>
+
+            <!-- Supplying Hotels & Cafés -->
+            <div id="supplying" class="service-item">
+                <div class="service-content">
+                    <h3 class="lang-en">Supplying Hotels & Cafés</h3>
+                    <h3 class="lang-ar">خدمة المقاهي والفنادق</h3>
+                    
+                    <p class="lang-en">Baked goods, sweets, and snacks — made daily, delivered fresh.</p>
+                    <p class="lang-ar">حلويات، مخبوزات، وسناكات – طازجة كل يوم وتوصل وهي فرش.</p>
+                    
+                    <ul class="service-features lang-en">
+                        <li>For cafés, hotel lounges, and concept stores</li>
+                        <li>Beautifully made, ready-to-serve items that customers actually buy</li>
+                        <li>Flexible, dependable restocking based on your business volume</li>
+                    </ul>
+                    
+                    <ul class="service-features lang-ar">
+                        <li>نخدم المقاهي، اللوبيات بالفنادق، وبعض المحلات المميزة</li>
+                        <li>منتجات جميلة وجاهزة للتقديم يشتريها الزبائن فعلاً</li>
+                        <li>نوصل لك كميات حسب احتياجك وبشكل منتظم ومرن</li>
+                    </ul>
+                </div>
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff" alt="Supplying Hotels & Cafés">
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-section">
+            <div class="container">
+                <h2 class="section-title lang-en">See Our Kitchen in Action</h2>
+                <h2 class="section-title lang-ar">شاهد مطبخنا في العمل</h2>
+                
+                <div class="video-container">
+                    <video 
+                        id="mainVideo" 
+                        class="main-video" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        poster="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070&auto=format&fit=crop"
+                    >
+                        <source src="videos/kitchen-video.mp4" type="video/mp4">
+                        <source src="videos/kitchen-video.webm" type="video/webm">
+                        <p class="lang-en">Your browser does not support the video tag.</p>
+                        <p class="lang-ar">متصفحك لا يدعم تشغيل الفيديو.</p>
+                    </video>
+                    
+                    <!-- Video Controls Overlay -->
+                    <div class="video-controls">
+                        <button class="video-control-btn play-pause-btn" id="playPauseBtn" aria-label="Play/Pause video">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        
+                        <button class="video-control-btn sound-btn" id="soundBtn" aria-label="Toggle sound">
+                            <svg class="sound-off-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                            </svg>
+                            <svg class="sound-on-icon" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="video-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Info Overlay -->
+                    <div class="video-info">
+                        <h3 class="lang-en">Fresh Daily Production</h3>
+                        <h3 class="lang-ar">إنتاج طازج يومياً</h3>
+                        <p class="lang-en">Watch how we prepare your orders with care and precision</p>
+                        <p class="lang-ar">شاهد كيف نحضر طلباتك بعناية ودقة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="lang-en">Let's Work Together</h2>
+            <h2 class="lang-ar">معك من أول خطوة... اطلب الآن</h2>
+            
+            <p class="lang-en">Looking to launch your food line, fuel an event, or stock your café with premium snacks? <strong>We're ready when you are.</strong></p>
+            <p class="lang-ar">تبي تطلق خط منتجات غذائية، تسوي مناسبة، أو تعبي مقهاك بسناكات مميزة؟ <strong>حنا جاهزين متى ما كنت جاهز.</strong></p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📩</span>
+                    <span class="contact-text">Sales@Prime.sa</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                    </svg>
+                    <a href="https://wa.me/966552651344" target="_blank" style="color: white; text-decoration: none;">
+                        <span class="contact-text lang-en">WhatsApp</span>
+                        <span class="contact-text lang-ar">واتساب</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
