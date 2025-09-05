@@ -9,8 +9,9 @@ body {
     line-height: 1.6;
     color: #231F20;
     overflow-x: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: opacity 0.3s ease;
     background: #FFFFFF;
+    opacity: 0;
 }
 
 /* Arabic font support */
@@ -35,11 +36,10 @@ body[lang="ar"] {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 12px 24px;
     border-radius: 50px;
-    cursor: pointer;
     z-index: 1001;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
@@ -54,7 +54,7 @@ body[lang="ar"] {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .language-toggle:hover::before {
@@ -65,7 +65,7 @@ body[lang="ar"] {
     background: rgba(255, 255, 255, 0.95);
     color: #231F20;
     border-color: rgba(35, 31, 32, 0.2);
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 16px 48px rgba(35, 31, 32, 0.25);
 }
 
@@ -80,12 +80,11 @@ body[lang="ar"] {
     color: white;
     border: none;
     border-radius: 50%;
-    cursor: pointer;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transform: translateY(30px) scale(0.8);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     box-shadow: 0 8px 32px rgba(35, 31, 32, 0.3);
     display: flex;
     align-items: center;
@@ -104,7 +103,7 @@ body[lang="ar"] {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .scroll-to-top:hover::before {
@@ -119,12 +118,12 @@ body[lang="ar"] {
 
 .scroll-to-top:hover {
     background: linear-gradient(135deg, #3a3436 0%, #231F20 100%);
-    transform: translateY(-8px) scale(1.1);
+    transform: translateY(-4px) scale(1.05);
     box-shadow: 0 16px 48px rgba(35, 31, 32, 0.4);
 }
 
 .scroll-to-top:active {
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-2px) scale(1.02);
     transition: all 0.2s ease;
 }
 
@@ -152,9 +151,9 @@ nav {
     right: 0;
     background: rgba(35, 31, 32, 0.98);
     backdrop-filter: blur(30px);
-    padding: 1.5rem 0;
+    padding: 0.8rem 0;
     z-index: 1000;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 32px rgba(35, 31, 32, 0.1);
 }
@@ -173,6 +172,7 @@ nav:hover {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    height: 70px;
 }
 
 body[lang="ar"] .nav-container {
@@ -181,8 +181,8 @@ body[lang="ar"] .nav-container {
 
 .nav-logo {
     display: block;
-    height: 100px;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    height: 60px;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
@@ -197,7 +197,7 @@ body[lang="ar"] .nav-container {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .nav-logo:hover::before {
@@ -208,12 +208,12 @@ body[lang="ar"] .nav-container {
     height: 100%;
     width: auto;
     object-fit: contain;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     filter: brightness(1) contrast(1.05);
 }
 
 .nav-logo:hover {
-    transform: scale(1.08) translateY(-4px);
+    transform: scale(1.05);
     box-shadow: 0 16px 48px rgba(255, 255, 255, 0.15);
 }
 
@@ -238,7 +238,7 @@ body[lang="ar"] .nav-links {
     font-weight: 500;
     padding: 1rem 2rem;
     border-radius: 50px;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     border: 1px solid transparent;
     position: relative;
     overflow: hidden;
@@ -254,7 +254,7 @@ body[lang="ar"] .nav-links {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .nav-links a:hover::before {
@@ -265,7 +265,7 @@ body[lang="ar"] .nav-links {
     background: rgba(255, 255, 255, 0.95);
     color: #231F20;
     border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 16px 48px rgba(255, 255, 255, 0.2);
 }
 
@@ -273,9 +273,8 @@ body[lang="ar"] .nav-links {
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    cursor: pointer;
     padding: 8px;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     border-radius: 8px;
 }
 
@@ -290,7 +289,7 @@ body[lang="ar"] .nav-links {
     height: 3px;
     background: white;
     margin: 4px 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     border-radius: 2px;
 }
 
@@ -315,7 +314,7 @@ body[lang="ar"] .nav-links {
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 130px;
+    top: 90px;
     left: 0;
     right: 0;
     background: rgba(35, 31, 32, 0.98);
@@ -324,7 +323,7 @@ body[lang="ar"] .nav-links {
     z-index: 999;
     transform: translateY(-30px);
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 16px 48px rgba(35, 31, 32, 0.2);
 }
@@ -348,7 +347,7 @@ body[lang="ar"] .mobile-menu ul {
     margin: 1.5rem 0;
     transform: translateY(30px);
     opacity: 0;
-    animation: mobileMenuSlideIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: mobileMenuSlideIn 0.4s ease forwards;
 }
 
 .mobile-menu ul li:nth-child(1) { animation-delay: 0.1s; }
@@ -371,7 +370,7 @@ body[lang="ar"] .mobile-menu ul {
     padding: 1.5rem;
     display: block;
     border-radius: 15px;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
@@ -386,7 +385,7 @@ body[lang="ar"] .mobile-menu ul {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .mobile-menu ul li a:hover::before {
@@ -395,14 +394,14 @@ body[lang="ar"] .mobile-menu ul {
 
 .mobile-menu ul li a:hover {
     background: rgba(255, 255, 255, 0.1);
-    transform: translateX(15px) scale(1.02);
+    transform: translateX(10px) scale(1.01);
     border-left: 4px solid white;
     padding-left: 2rem;
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
 }
 
 body[lang="ar"] .mobile-menu ul li a:hover {
-    transform: translateX(-15px) scale(1.02);
+    transform: translateX(-10px) scale(1.01);
     border-left: none;
     border-right: 4px solid white;
     padding-left: 1.5rem;
@@ -419,7 +418,8 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-top: 130px;
+    margin-top: 0;
+    padding-top: 90px;
 }
 
 .hero-background {
@@ -436,21 +436,10 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 25s cubic-bezier(0.23, 1, 0.32, 1);
-    animation: heroImageFloat 25s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
+    transition: transform 0.3s ease;
     filter: brightness(1.05) contrast(1.1) saturate(1.1);
 }
 
-@keyframes heroImageFloat {
-    0% { 
-        transform: scale(1) translateY(0px) rotate(0deg); 
-        filter: brightness(1.05) contrast(1.1) saturate(1.1);
-    }
-    100% { 
-        transform: scale(1.12) translateY(-20px) rotate(0.8deg); 
-        filter: brightness(1.15) contrast(1.15) saturate(1.15);
-    }
-}
 
 .hero-overlay {
     position: absolute;
@@ -467,13 +456,8 @@ body[lang="ar"] .mobile-menu ul li a:hover {
         rgba(35, 31, 32, 0.92) 100%
     );
     backdrop-filter: blur(3px);
-    animation: overlayPulse 12s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
 }
 
-@keyframes overlayPulse {
-    0% { opacity: 1; }
-    100% { opacity: 0.96; }
-}
 
 .hero-content {
     position: relative;
@@ -482,21 +466,10 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     color: white;
     max-width: 1200px;
     padding: 0 3rem;
-    animation: heroContentFadeIn 2.5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 1;
+    transform: translateY(0);
 }
 
-@keyframes heroContentFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(80px) scale(0.9);
-        filter: blur(8px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-}
 
 .hero-text {
     display: flex;
@@ -535,7 +508,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: titleShimmer 4s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+    animation: titleShimmer 3s ease infinite;
 }
 
 @keyframes titleGlow {
@@ -545,7 +518,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     }
     100% { 
         text-shadow: 0 8px 64px rgba(255, 255, 255, 0.6);
-        transform: scale(1.03);
+        transform: scale(1.01);
     }
 }
 
@@ -562,13 +535,13 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     opacity: 0.92;
     text-transform: lowercase;
     font-style: italic;
-    animation: subtitleFloat 4s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
+    animation: subtitleFloat 3s ease infinite alternate;
     font-family: 'Inter', sans-serif;
 }
 
 @keyframes subtitleFloat {
     0% { transform: translateY(0px); opacity: 0.92; }
-    100% { transform: translateY(-8px); opacity: 1; }
+    100% { transform: translateY(-4px); opacity: 1; }
 }
 
 body[lang="ar"] .hero-title-sub {
@@ -584,42 +557,18 @@ body[lang="ar"] .hero-title-sub {
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-    animation: descriptionSlideIn 2.8s cubic-bezier(0.23, 1, 0.32, 1) 0.8s both;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.5px;
 }
 
-@keyframes descriptionSlideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(50px) scale(0.95);
-        filter: blur(5px);
-    }
-    100% {
-        opacity: 0.88;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-    }
-}
 
 .hero-cta {
     display: flex;
     gap: 2.5rem;
     justify-content: center;
     flex-wrap: wrap;
-    animation: ctaFadeIn 3s cubic-bezier(0.23, 1, 0.32, 1) 1.5s both;
 }
 
-@keyframes ctaFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(40px) scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
 
 .cta-button {
     display: inline-flex;
@@ -629,10 +578,9 @@ body[lang="ar"] .hero-title-sub {
     font-weight: 500;
     text-decoration: none;
     border-radius: 60px;
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     backdrop-filter: blur(20px);
     border: 2px solid transparent;
     text-transform: uppercase;
@@ -648,7 +596,7 @@ body[lang="ar"] .hero-title-sub {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .cta-button:hover::before {
@@ -665,12 +613,12 @@ body[lang="ar"] .hero-title-sub {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.4s ease;
 }
 
 .cta-button:hover::after {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 
 .cta-button.primary {
@@ -684,7 +632,7 @@ body[lang="ar"] .hero-title-sub {
     background: transparent;
     color: white;
     border-color: white;
-    transform: translateY(-8px) scale(1.08);
+    transform: translateY(-4px) scale(1.03);
     box-shadow: 0 24px 80px rgba(255, 255, 255, 0.3);
 }
 
@@ -698,7 +646,7 @@ body[lang="ar"] .hero-title-sub {
 .cta-button.secondary:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: white;
-    transform: translateY(-8px) scale(1.08);
+    transform: translateY(-4px) scale(1.03);
     box-shadow: 0 24px 80px rgba(255, 255, 255, 0.2);
 }
 
@@ -708,13 +656,12 @@ body[lang="ar"] .hero-title-sub {
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
-    animation: scrollIndicatorBounce 3s cubic-bezier(0.23, 1, 0.32, 1) infinite;
-    cursor: pointer;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: scrollIndicatorBounce 2s ease infinite;
+    transition: all 0.3s ease;
 }
 
 .hero-scroll-indicator:hover {
-    transform: translateX(-50%) scale(1.3);
+    transform: translateX(-50%) scale(1.1);
 }
 
 @keyframes scrollIndicatorBounce {
@@ -722,10 +669,10 @@ body[lang="ar"] .hero-title-sub {
         transform: translateX(-50%) translateY(0);
     }
     40% {
-        transform: translateX(-50%) translateY(-20px);
+        transform: translateX(-50%) translateY(-10px);
     }
     60% {
-        transform: translateX(-50%) translateY(-10px);
+        transform: translateX(-50%) translateY(-5px);
     }
 }
 
@@ -737,7 +684,7 @@ body[lang="ar"] .hero-title-sub {
     border-left: none;
     transform: rotate(45deg);
     opacity: 0.85;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
     position: relative;
 }
 
@@ -751,7 +698,7 @@ body[lang="ar"] .hero-title-sub {
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-top: none;
     border-left: none;
-    animation: arrowGlow 3s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
+    animation: arrowGlow 2s ease infinite alternate;
 }
 
 @keyframes arrowGlow {
@@ -901,7 +848,7 @@ body[lang="ar"] .service-content {
     overflow: hidden;
     border-radius: 30px;
     box-shadow: 0 32px 120px rgba(35, 31, 32, 0.15);
-    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.4s ease;
 }
 
 .service-image::before {
@@ -914,7 +861,7 @@ body[lang="ar"] .service-content {
     background: linear-gradient(135deg, rgba(35, 31, 32, 0.1) 0%, transparent 50%, rgba(35, 31, 32, 0.05) 100%);
     z-index: 1;
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.3s ease;
 }
 
 .service-image::after {
@@ -926,7 +873,7 @@ body[lang="ar"] .service-content {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     z-index: 2;
-    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: left 0.6s ease;
 }
 
 .service-item:hover .service-image::before {
@@ -938,7 +885,7 @@ body[lang="ar"] .service-content {
 }
 
 .service-item:hover .service-image {
-    transform: translateY(-20px) scale(1.08) rotateY(3deg);
+    transform: translateY(-10px) scale(1.03);
     box-shadow: 0 48px 160px rgba(35, 31, 32, 0.25);
 }
 
@@ -947,12 +894,12 @@ body[lang="ar"] .service-content {
     height: 450px;
     object-fit: cover;
     border-radius: 30px;
-    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.4s ease;
     filter: brightness(1.05) contrast(1.05) saturate(1.05);
 }
 
 .service-item:hover .service-image img {
-    transform: scale(1.15) rotate(1.5deg);
+    transform: scale(1.05);
     filter: brightness(1.15) contrast(1.1) saturate(1.1);
 }
 
@@ -1632,8 +1579,8 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .hero {
-        min-height: 750px;
-        margin-top: 110px;
+        min-height: 700px;
+        padding-top: 80px;
     }
 
     .services {
@@ -1680,12 +1627,13 @@ body[lang="ar"] .mobile-menu .lang-ar {
         background: rgba(255, 255, 255, 0.25);
         color: white;
         border-color: rgba(255, 255, 255, 0.5);
-        transform: scale(1.03);
+        transform: scale(1.01);
     }
 
     /* Navigation Mobile */
     .nav-container {
         padding: 0 20px;
+        height: 60px;
     }
 
     .nav-links {
@@ -1697,17 +1645,17 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .nav-logo {
-        height: 80px;
+        height: 50px;
     }
 
     /* Mobile Menu */
     .mobile-menu {
-        top: 100px;
+        top: 70px;
     }
 
     /* Hero Mobile */
     .hero {
-        margin-top: 100px;
+        padding-top: 70px;
         height: 95vh;
         min-height: 600px;
     }
@@ -1902,17 +1850,17 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .nav-logo {
-        height: 70px;
+        height: 45px;
     }
 
     .mobile-menu {
-        top: 90px;
+        top: 65px;
         padding: 2rem;
     }
 
     /* Hero Extra Small Mobile */
     .hero {
-        margin-top: 90px;
+        padding-top: 65px;
         height: 90vh;
         min-height: 550px;
     }

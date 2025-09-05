@@ -307,14 +307,14 @@ function updateParallax() {
     
     if (scrolled < window.innerHeight) {
         if (heroImage) {
-            const rate = scrolled * -0.4;
-            heroImage.style.transform = `translateY(${rate}px) scale(${1.08 + scrolled * 0.0002})`;
+            const rate = scrolled * -0.2;
+            heroImage.style.transform = `translateY(${rate}px) scale(${1.02 + scrolled * 0.0001})`;
         }
         
         if (heroContent) {
-            const rate = scrolled * 0.3;
+            const rate = scrolled * 0.1;
             heroContent.style.transform = `translateY(${rate}px)`;
-            heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.4;
+            heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.2;
         }
     }
     
@@ -351,55 +351,8 @@ window.addEventListener('scroll', () => {
 
 // Add luxury loading animation
 window.addEventListener('load', () => {
-    // Create loading overlay
-    const loadingOverlay = document.createElement('div');
-    loadingOverlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #231F20 0%, #2a2426 50%, #231F20 100%);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
-    `;
-    
-    const loadingText = document.createElement('div');
-    loadingText.innerHTML = 'PRIME';
-    loadingText.style.cssText = `
-        font-size: 5rem;
-        font-weight: 100;
-        letter-spacing: 12px;
-        color: white;
-        opacity: 0;
-        animation: loadingPulse 2s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
-        font-family: 'Inter', sans-serif;
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes loadingPulse {
-            0% { opacity: 0.6; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.08); }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    loadingOverlay.appendChild(loadingText);
-    document.body.appendChild(loadingOverlay);
-    
-    // Fade out loading screen
-    setTimeout(() => {
-        loadingOverlay.style.opacity = '0';
-        loadingOverlay.style.transform = 'scale(1.15)';
-        setTimeout(() => {
-            document.body.removeChild(loadingOverlay);
-            document.head.removeChild(style);
-        }, 1200);
-    }, 2000);
+    // Simple fade-in for body
+    document.body.style.opacity = '1';
 });
 
 // Performance optimization: Debounce resize events
