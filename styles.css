@@ -419,7 +419,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     justify-content: center;
     overflow: hidden;
     margin-top: 0;
-    padding-top: 90px;
+    padding-top: 0;
 }
 
 .hero-background {
@@ -1580,7 +1580,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     .hero {
         min-height: 700px;
-        padding-top: 80px;
+        padding-top: 0;
     }
 
     .services {
@@ -1655,7 +1655,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     /* Hero Mobile */
     .hero {
-        padding-top: 70px;
+        padding-top: 0;
         height: 95vh;
         min-height: 600px;
     }
@@ -1860,7 +1860,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     /* Hero Extra Small Mobile */
     .hero {
-        padding-top: 65px;
+        padding-top: 0;
         height: 90vh;
         min-height: 550px;
     }
