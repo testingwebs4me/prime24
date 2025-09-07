@@ -492,7 +492,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
-    animation: titleGlow 6s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
+    animation: titleGlow 3s cubic-bezier(0.23, 1, 0.32, 1) 1 forwards;
     position: relative;
     font-family: 'Inter', sans-serif;
 }
@@ -505,7 +505,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    animation: titleShimmer 3s ease infinite;
+    animation: titleShimmer 2s ease 1 forwards;
 }
 
 @keyframes titleGlow {
@@ -520,9 +520,20 @@ body[lang="ar"] .mobile-menu ul li a:hover {
 }
 
 @keyframes titleShimmer {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
+    0% { 
+        left: -100%; 
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% { 
+        left: 100%; 
+        opacity: 0;
+    }
 }
 
 .hero-title-sub {
