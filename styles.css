@@ -446,13 +446,13 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     height: 100%;
     background: linear-gradient(
         135deg,
-        rgba(35, 31, 32, 0.92) 0%,
-        rgba(35, 31, 32, 0.78) 25%,
-        rgba(35, 31, 32, 0.65) 50%,
-        rgba(35, 31, 32, 0.78) 75%,
-        rgba(35, 31, 32, 0.95) 100%
+        rgba(35, 31, 32, 0.96) 0%,
+        rgba(35, 31, 32, 0.89) 25%,
+        rgba(35, 31, 32, 0.82) 50%,
+        rgba(35, 31, 32, 0.89) 75%,
+        rgba(35, 31, 32, 0.98) 100%
     );
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(6px);
 }
 
 
