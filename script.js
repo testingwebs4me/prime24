@@ -278,7 +278,7 @@ function initScrollAnimations() {
 
     // Observe elements for animation
     const elementsToAnimate = document.querySelectorAll(
-        '.section-title, .service-item, .contact h2, .contact p, .contact-item'
+        '.services, .section-title, .service-item, .contact h2, .contact p, .contact-item'
     );
 
     elementsToAnimate.forEach((el, index) => {
