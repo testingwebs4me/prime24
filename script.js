@@ -169,6 +169,10 @@ window.addEventListener('DOMContentLoaded', function() {
     loadLanguagePreference();
     initScrollAnimations();
     
+    // Initialize navbar as visible
+    const nav = document.querySelector('nav');
+    nav.classList.add('nav-visible');
+    
     // Initialize video player
     const video = document.getElementById('mainVideo');
     if (video) {
@@ -332,10 +336,30 @@ window.addEventListener('scroll', requestParallaxUpdate);
 
 // Smooth navigation background transition
 let lastScrollTop = 0;
+let navbarTimeout;
+
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
+    // Handle navbar hide/show
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down - hide navbar
+        nav.classList.add('nav-hidden');
+        nav.classList.remove('nav-visible');
+    } else if (scrollTop < lastScrollTop) {
+        // Scrolling up - show navbar
+        nav.classList.remove('nav-hidden');
+        nav.classList.add('nav-visible');
+    }
+    
+    // Show navbar when at top of page
+    if (scrollTop <= 50) {
+        nav.classList.remove('nav-hidden');
+        nav.classList.add('nav-visible');
+    }
+    
+    // Background transition
     if (scrollTop > 100) {
         nav.style.background = 'rgba(35, 31, 32, 0.99)';
         nav.style.backdropFilter = 'blur(40px)';

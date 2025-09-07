@@ -153,9 +153,18 @@ nav {
     backdrop-filter: blur(30px);
     padding: 0.8rem 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.3s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 8px 32px rgba(35, 31, 32, 0.1);
+    transform: translateY(0);
+}
+
+nav.nav-hidden {
+    transform: translateY(-100%);
+}
+
+nav.nav-visible {
+    transform: translateY(0);
 }
 
 nav:hover {
