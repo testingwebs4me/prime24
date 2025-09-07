@@ -434,7 +434,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     object-fit: cover;
     object-position: center;
     transition: transform 0.3s ease;
-    filter: brightness(1.05) contrast(1.1) saturate(1.1);
+    filter: brightness(0.4) contrast(1.2) saturate(0.8);
 }
 
 
