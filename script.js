@@ -374,10 +374,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Add luxury loading animation
-window.addEventListener('load', () => {
-    // Simple fade-in for body
-    document.body.style.opacity = '1';
-});
+// Removed loading animation to prevent flash
 
 // Performance optimization: Debounce resize events
 function debounce(func, wait) {
