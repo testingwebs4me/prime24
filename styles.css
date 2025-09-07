@@ -543,7 +543,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     opacity: 0.92;
     text-transform: lowercase;
     font-style: italic;
-    animation: subtitleFloat 3s ease infinite alternate;
+    animation: subtitleFloat 3s ease 1 forwards;
     font-family: 'Inter', sans-serif;
 }
 
