@@ -29,7 +29,7 @@ body[lang="ar"] {
 /* Language Toggle Button */
 .language-toggle {
     position: fixed;
-    top: 25px;
+    top: 22px;
     right: 20px;
     background: rgba(35, 31, 32, 0.9);
     color: white;
