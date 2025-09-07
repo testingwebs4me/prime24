@@ -131,11 +131,6 @@ body[lang="ar"] .scroll-to-top {
     left: 40px;
 }
 
-body[lang="ar"] .language-toggle {
-    right: auto;
-    left: 20px;
-}
-
 /* Navigation */
 nav {
     position: fixed;
@@ -1637,11 +1632,6 @@ body[lang="ar"] .mobile-menu .lang-ar {
         transform: translateY(-1px) scale(1.05);
     }
 
-    body[lang="ar"] .language-toggle {
-        right: auto;
-        left: 15px;
-    }
-
     /* Navigation Mobile */
     .nav-container {
         padding: 0 20px;
@@ -1863,11 +1853,6 @@ body[lang="ar"] .mobile-menu .lang-ar {
         font-size: 0.75rem;
         min-width: 40px;
         border-radius: 18px;
-    }
-
-    body[lang="ar"] .language-toggle {
-        right: auto;
-        left: 12px;
     }
 
     .nav-logo {
