@@ -4,8 +4,41 @@
     box-sizing: border-box;
 }
 
+/* Custom Font Loading */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('https://drive.google.com/uc?export=download&id=1L34CEGeiV95fsL-dluaCWQL6xZrF-jpT') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('https://drive.google.com/uc?export=download&id=1qxpxL6dMykyLRUpyuNibDJJ7Ipsfu7H5') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('https://drive.google.com/uc?export=download&id=1gLe2W56PF7Vx1P32LOx7GKVH5kL8aMcO') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('https://drive.google.com/uc?export=download&id=1PkxOQfa0pB3Ee0yka5EtkNRtXSgd3O4O') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'CustomFont', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #231F20;
     overflow-x: hidden;
@@ -16,7 +49,7 @@ body {
 
 /* Arabic font support */
 body[lang="ar"] {
-    font-family: 'Inter', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+    font-family: 'CustomFont', 'Inter', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
     direction: rtl;
 }
 
@@ -541,7 +574,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     text-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
     animation: titleGlow 3s cubic-bezier(0.23, 1, 0.32, 1) 3s 1 forwards;
     position: relative;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 .hero-title-main::after {
@@ -591,7 +624,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     text-transform: lowercase;
     font-style: italic;
     animation: subtitleFloat 3s ease 1 forwards;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 @keyframes subtitleFloat {
@@ -612,7 +645,7 @@ body[lang="ar"] .hero-title-sub {
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     letter-spacing: 0.5px;
     animation: heroDescriptionFade 1.5s cubic-bezier(0.23, 1, 0.32, 1) 1.5s forwards;
 }
@@ -665,7 +698,7 @@ body[lang="ar"] .hero-title-sub {
     border: 2px solid transparent;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     transform: translateY(0) scale(1);
 }
 
@@ -853,7 +886,7 @@ body[lang="ar"] .hero-title-sub {
     transform: translateY(50px);
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 3px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 .section-title.animate {
@@ -1012,7 +1045,7 @@ body[lang="ar"] .service-content {
     position: relative;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 1.5px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 .service-content h3::after {
@@ -1044,7 +1077,7 @@ body[lang="ar"] .service-content h3::after {
     font-size: 1.3rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     letter-spacing: 0.3px;
 }
 
@@ -1071,7 +1104,7 @@ body[lang="ar"] .service-item:hover .service-content p {
     transform: translateX(0);
     font-size: 1.1rem;
     line-height: 1.7;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     letter-spacing: 0.2px;
 }
 
@@ -1337,7 +1370,7 @@ body[lang="ar"] .service-features li::before {
     font-weight: 500;
     letter-spacing: 1.5px;
     animation: videoTitleGlow 4s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 @keyframes videoTitleGlow {
@@ -1350,7 +1383,7 @@ body[lang="ar"] .service-features li::before {
     opacity: 0.92;
     font-weight: 300;
     line-height: 1.7;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     letter-spacing: 0.3px;
 }
 
@@ -1394,7 +1427,7 @@ body[lang="ar"] .service-features li::before {
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 3px;
     position: relative;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 .contact h2::after {
@@ -1428,7 +1461,7 @@ body[lang="ar"] .service-features li::before {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -1502,7 +1535,7 @@ body[lang="ar"] .service-features li::before {
     font-size: 1.3rem;
     font-weight: 500;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    font-family: 'Inter', sans-serif;
+    font-family: 'CustomFont', 'Inter', sans-serif;
     letter-spacing: 0.5px;
 }
 
