@@ -1072,7 +1072,7 @@ body[lang="ar"] .service-content h3::after {
 
 .service-content p {
     margin-bottom: 2.5rem;
-    color: #D1D3D4;
+    color: #231F20;
     line-height: 1.9;
     font-size: 1.3rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1082,7 +1082,7 @@ body[lang="ar"] .service-content h3::after {
 }
 
 .service-item:hover .service-content p {
-    color: #D1D3D4;
+    color: #231F20;
     transform: translateX(8px);
 }
 
@@ -1885,7 +1885,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .service-content p {
         font-size: 1.15rem;
         margin-bottom: 1.5rem;
-        color: #D1D3D4;
+        color: #231F20;
     }
 
     .service-features {
@@ -2058,6 +2058,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     .service-content p {
         font-size: 1.05rem;
+        color: #231F20;
     }
 
     .service-features li {
