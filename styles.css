@@ -259,11 +259,11 @@ body[lang="ar"] .nav-links {
 }
 
 .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: #FFFFFF;
     color: #231F20;
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(209, 211, 212, 0.3);
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 16px 48px rgba(209, 211, 212, 0.2);
 }
 
 /* Mobile Menu Toggle */
@@ -390,17 +390,17 @@ body[lang="ar"] .mobile-menu ul {
 }
 
 .mobile-menu ul li a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(209, 211, 212, 0.1);
     transform: translateX(10px) scale(1.01);
-    border-left: 4px solid white;
+    border-left: 4px solid #D1D3D4;
     padding-left: 2rem;
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(209, 211, 212, 0.1);
 }
 
 body[lang="ar"] .mobile-menu ul li a:hover {
     transform: translateX(-10px) scale(1.01);
     border-left: none;
-    border-right: 4px solid white;
+    border-right: 4px solid #D1D3D4;
     padding-left: 1.5rem;
     padding-right: 2rem;
 }
@@ -711,24 +711,24 @@ body[lang="ar"] .hero-title-sub {
 
 .cta-button.primary:hover {
     background: transparent;
-    color: white;
-    border-color: white;
+    color: #FFFFFF;
+    border-color: #D1D3D4;
     transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 24px 80px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 24px 80px rgba(209, 211, 212, 0.3);
 }
 
 .cta-button.secondary {
     background: transparent;
-    color: white;
-    border-color: rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    border-color: rgba(209, 211, 212, 0.4);
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button.secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: white;
+    background: rgba(209, 211, 212, 0.15);
+    border-color: #D1D3D4;
     transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 24px 80px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 24px 80px rgba(209, 211, 212, 0.2);
 }
 
 .hero-scroll-indicator {
@@ -827,7 +827,7 @@ body[lang="ar"] .hero-title-sub {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #fafafa 0%, #ffffff 25%, #f8f9fa 50%, #ffffff 75%, #fafafa 100%);
+    background: linear-gradient(135deg, rgba(209, 211, 212, 0.03) 0%, #ffffff 25%, rgba(209, 211, 212, 0.05) 50%, #ffffff 75%, rgba(209, 211, 212, 0.03) 100%);
     z-index: 0;
     animation: backgroundShift 20s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
 }
@@ -1039,7 +1039,7 @@ body[lang="ar"] .service-content h3::after {
 
 .service-content p {
     margin-bottom: 2.5rem;
-    color: #666;
+    color: #D1D3D4;
     line-height: 1.9;
     font-size: 1.3rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1049,7 +1049,7 @@ body[lang="ar"] .service-content h3::after {
 }
 
 .service-item:hover .service-content p {
-    color: #555;
+    color: #D1D3D4;
     transform: translateX(8px);
 }
 
@@ -1064,7 +1064,7 @@ body[lang="ar"] .service-item:hover .service-content p {
 
 .service-features li {
     padding: 1rem 0;
-    color: #666;
+    color: #D1D3D4;
     position: relative;
     padding-left: 2.5rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1077,7 +1077,7 @@ body[lang="ar"] .service-item:hover .service-content p {
 
 .service-item:hover .service-features li {
     transform: translateX(12px);
-    color: #555;
+    color: #D1D3D4;
 }
 
 body[lang="ar"] .service-item:hover .service-features li {
@@ -1118,7 +1118,7 @@ body[lang="ar"] .service-features li::before {
 
 /* Video Section */
 .video-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 25%, #f5f6f7 50%, #ffffff 75%, #f8f9fa 100%);
+    background: linear-gradient(135deg, rgba(209, 211, 212, 0.05) 0%, #ffffff 25%, rgba(209, 211, 212, 0.08) 50%, #ffffff 75%, rgba(209, 211, 212, 0.05) 100%);
     padding: 10rem 0;
     margin-top: 8rem;
     position: relative;
@@ -1248,9 +1248,9 @@ body[lang="ar"] .service-features li::before {
 }
 
 .video-control-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(209, 211, 212, 0.3);
     transform: scale(1.2);
-    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(209, 211, 212, 0.2);
 }
 
 .video-control-btn:active {
@@ -1270,7 +1270,7 @@ body[lang="ar"] .service-features li::before {
 
 .progress-bar {
     height: 8px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(209, 211, 212, 0.3);
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
@@ -1296,7 +1296,7 @@ body[lang="ar"] .service-features li::before {
 
 .progress-bar:hover {
     height: 12px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(209, 211, 212, 0.4);
 }
 
 .progress-fill {
@@ -1483,9 +1483,9 @@ body[lang="ar"] .service-features li::before {
 }
 
 .contact-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(209, 211, 212, 0.15);
     transform: translateY(-12px) scale(1.08);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(209, 211, 212, 0.3);
     box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
 }
 
@@ -1508,7 +1508,7 @@ body[lang="ar"] .service-features li::before {
 
 .contact-item:hover .contact-text {
     transform: translateX(8px);
-    color: #f0f0f0;
+    color: #FFFFFF;
 }
 
 /* WhatsApp SVG Icon Styling */
@@ -1852,7 +1852,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .service-content p {
         font-size: 1.15rem;
         margin-bottom: 1.5rem;
-        color: #666;
+        color: #D1D3D4;
     }
 
     .service-features {
@@ -1869,7 +1869,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
         font-size: 1.05rem;
         padding: 0.8rem 0;
         padding-left: 3rem;
-        color: #666;
+        color: #D1D3D4;
     }
 
     body[lang="ar"] .service-features li {
@@ -2029,7 +2029,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     .service-features li {
         font-size: 1rem;
-        color: #666;
+        color: #D1D3D4;
     }
 
     .contact h2 {
