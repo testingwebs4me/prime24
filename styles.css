@@ -23,9 +23,18 @@ body {
 }
 
 .hero-title-main {
-    font-family: 'TestGemola', Arial, sans-serif !important;
-    color: red !important;
-    font-size: 8rem !important;
+    font-family: 'TestGemola', Arial, sans-serif;
+    font-size: 7rem;
+    font-weight: 100;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 30%, #ffffff 70%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
+    animation: titleGlow 3s cubic-bezier(0.23, 1, 0.32, 1) 3s 1 forwards;
+    position: relative;
 }
 
 .container {
@@ -599,7 +608,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
     text-transform: lowercase;
     font-style: italic;
     animation: subtitleFloat 3s ease 1 forwards;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
 }
 
 @keyframes subtitleFloat {
@@ -620,7 +629,7 @@ body[lang="ar"] .hero-title-sub {
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     letter-spacing: 0.5px;
     animation: heroDescriptionFade 1.5s cubic-bezier(0.23, 1, 0.32, 1) 1.5s forwards;
 }
@@ -673,7 +682,7 @@ body[lang="ar"] .hero-title-sub {
     border: 2px solid transparent;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     transform: translateY(0) scale(1);
 }
 
@@ -861,7 +870,7 @@ body[lang="ar"] .hero-title-sub {
     transform: translateY(50px);
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 3px;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
 }
 
 .section-title.animate {
@@ -1020,7 +1029,7 @@ body[lang="ar"] .service-content {
     position: relative;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 1.5px;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
 }
 
 .service-content h3::after {
@@ -1052,7 +1061,7 @@ body[lang="ar"] .service-content h3::after {
     font-size: 1.3rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     letter-spacing: 0.3px;
 }
 
@@ -1079,7 +1088,7 @@ body[lang="ar"] .service-item:hover .service-content p {
     transform: translateX(0);
     font-size: 1.1rem;
     line-height: 1.7;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     letter-spacing: 0.2px;
 }
 
@@ -1345,7 +1354,7 @@ body[lang="ar"] .service-features li::before {
     font-weight: 500;
     letter-spacing: 1.5px;
     animation: videoTitleGlow 4s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
 }
 
 @keyframes videoTitleGlow {
@@ -1358,7 +1367,7 @@ body[lang="ar"] .service-features li::before {
     opacity: 0.92;
     font-weight: 300;
     line-height: 1.7;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     letter-spacing: 0.3px;
 }
 
@@ -1402,7 +1411,7 @@ body[lang="ar"] .service-features li::before {
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 3px;
     position: relative;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
 }
 
 .contact h2::after {
@@ -1436,7 +1445,7 @@ body[lang="ar"] .service-features li::before {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -1510,7 +1519,7 @@ body[lang="ar"] .service-features li::before {
     font-size: 1.3rem;
     font-weight: 500;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    font-family: 'CustomFont', 'Inter', sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif;
     letter-spacing: 0.5px;
 }
 
