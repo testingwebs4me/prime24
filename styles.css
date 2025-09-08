@@ -629,7 +629,7 @@ body[lang="ar"] .hero-title-sub {
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.5px;
     animation: heroDescriptionFade 1.5s cubic-bezier(0.23, 1, 0.32, 1) 1.5s forwards;
 }
@@ -682,7 +682,7 @@ body[lang="ar"] .hero-title-sub {
     border: 2px solid transparent;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     transform: translateY(0) scale(1);
 }
 
@@ -870,7 +870,7 @@ body[lang="ar"] .hero-title-sub {
     transform: translateY(50px);
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 3px;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
 }
 
 .section-title.animate {
@@ -1029,7 +1029,7 @@ body[lang="ar"] .service-content {
     position: relative;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 1.5px;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
 }
 
 .service-content h3::after {
@@ -1061,7 +1061,7 @@ body[lang="ar"] .service-content h3::after {
     font-size: 1.3rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.3px;
 }
 
@@ -1088,7 +1088,7 @@ body[lang="ar"] .service-item:hover .service-content p {
     transform: translateX(0);
     font-size: 1.1rem;
     line-height: 1.7;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.2px;
 }
 
@@ -1354,7 +1354,7 @@ body[lang="ar"] .service-features li::before {
     font-weight: 500;
     letter-spacing: 1.5px;
     animation: videoTitleGlow 4s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
 }
 
 @keyframes videoTitleGlow {
@@ -1367,7 +1367,7 @@ body[lang="ar"] .service-features li::before {
     opacity: 0.92;
     font-weight: 300;
     line-height: 1.7;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.3px;
 }
 
@@ -1411,7 +1411,7 @@ body[lang="ar"] .service-features li::before {
     transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
     letter-spacing: 3px;
     position: relative;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
 }
 
 .contact h2::after {
@@ -1445,7 +1445,7 @@ body[lang="ar"] .service-features li::before {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.5px;
 }
 
@@ -1519,7 +1519,7 @@ body[lang="ar"] .service-features li::before {
     font-size: 1.3rem;
     font-weight: 500;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.5px;
 }
 
