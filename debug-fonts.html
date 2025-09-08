@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Debug Test</title>
+    <style>
+        @font-face {
+            font-family: 'GemolaTest';
+            src: url('https://github.com/testingwebs4me/prime24/raw/main/font/Gemola%20400.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'NotoTest';
+            src: url('https://github.com/testingwebs4me/prime24/raw/main/NotoSansArabic-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        
+        .gemola-test {
+            font-family: 'GemolaTest', Arial, sans-serif;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: red;
+        }
+        
+        .noto-test {
+            font-family: 'NotoTest', Arial, sans-serif;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: blue;
+        }
+        
+        .fallback {
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+            margin: 20px 0;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Font Loading Test</h1>
+    
+    <div class="gemola-test">
+        This should be Gemola font (RED)
+    </div>
+    
+    <div class="noto-test">
+        This should be Noto Sans Arabic (BLUE) - مرحبا
+    </div>
+    
+    <div class="fallback">
+        This is Arial fallback (GREEN)
+    </div>
+    
+    <script>
+        // Check if fonts are loading
+        document.fonts.ready.then(() => {
+            console.log('All fonts loaded');
+            document.fonts.forEach(font => {
+                console.log('Font loaded:', font.family, font.status);
+            });
+        });
+        
+        // Check specific fonts
+        const gemolaFont = new FontFace('GemolaTest', 'url(https://github.com/testingwebs4me/prime24/raw/main/font/Gemola%20400.ttf)');
+        const notoFont = new FontFace('NotoTest', 'url(https://github.com/testingwebs4me/prime24/raw/main/NotoSansArabic-Regular.ttf)');
+        
+        gemolaFont.load().then(() => {
+            console.log('✅ Gemola loaded successfully');
+        }).catch(err => {
+            console.error('❌ Gemola failed to load:', err);
+        });
+        
+        notoFont.load().then(() => {
+            console.log('✅ Noto Sans Arabic loaded successfully');
+        }).catch(err => {
+            console.error('❌ Noto Sans Arabic failed to load:', err);
+        });
+    </script>
+</body>
+</html>
