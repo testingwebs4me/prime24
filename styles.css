@@ -10,7 +10,7 @@
     src: url('https://drive.google.com/uc?export=download&id=1L34CEGeiV95fsL-dluaCWQL6xZrF-jpT') format('truetype');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
@@ -18,7 +18,7 @@
     src: url('https://drive.google.com/uc?export=download&id=1qxpxL6dMykyLRUpyuNibDJJ7Ipsfu7H5') format('truetype');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
@@ -26,7 +26,7 @@
     src: url('https://drive.google.com/uc?export=download&id=1gLe2W56PF7Vx1P32LOx7GKVH5kL8aMcO') format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
@@ -34,7 +34,7 @@
     src: url('https://drive.google.com/uc?export=download&id=1PkxOQfa0pB3Ee0yka5EtkNRtXSgd3O4O') format('truetype');
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
+    font-display: block;
 }
 
 body {
