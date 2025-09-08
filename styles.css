@@ -42,11 +42,11 @@
     src: url('https://raw.githubusercontent.com/testingwebs4me/prime24/main/font/Gemola%20400.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-    font-display: block;
+    font-display: swap;
 }
 
 body {
-    font-family: 'GemolaFont', 'CustomFont', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'CustomFont', 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #231F20;
     overflow-x: hidden;
@@ -62,12 +62,21 @@ body[lang="ar"] {
 }
 
 /* English-specific elements use Gemola */
-body[lang="en"] .hero-title-main,
-body[lang="en"] .hero-title-sub,
-body[lang="en"] .section-title,
-body[lang="en"] .service-content h3,
-body[lang="en"] .contact h2 {
+.hero-title-main,
+.hero-title-sub,
+.section-title,
+.service-content h3,
+.contact h2 {
     font-family: 'GemolaFont', 'Inter', sans-serif;
+}
+
+/* Override for Arabic - use CustomFont */
+body[lang="ar"] .hero-title-main,
+body[lang="ar"] .hero-title-sub,
+body[lang="ar"] .section-title,
+body[lang="ar"] .service-content h3,
+body[lang="ar"] .contact h2 {
+    font-family: 'CustomFont', 'Inter', sans-serif;
 }
 
 .container {
