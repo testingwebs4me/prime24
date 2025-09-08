@@ -772,7 +772,7 @@ body[lang="ar"] .hero-title-sub {
 .scroll-arrow {
     width: 40px;
     height: 40px;
-    border: 2px solid white;
+    border: 2px solid #D1D3D4;
     border-top: none;
     border-left: none;
     transform: rotate(45deg);
@@ -788,20 +788,20 @@ body[lang="ar"] .hero-title-sub {
     left: -2px;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(209, 211, 212, 0.5);
     border-top: none;
     border-left: none;
-    animation: arrowGlow 2s ease infinite alternate;
+    animation: arrowGlowGray 2s ease infinite alternate;
 }
 
-@keyframes arrowGlow {
-    0% { opacity: 0.3; }
+@keyframes arrowGlowGray {
+    0% { opacity: 0.5; }
     100% { opacity: 0.9; }
 }
 
 .hero-scroll-indicator:hover .scroll-arrow {
     opacity: 1;
-    border-color: #f0f0f0;
+    border-color: #B1B3B4;
 }
 
 /* Services Section */
@@ -869,15 +869,15 @@ body[lang="ar"] .hero-title-sub {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #231F20, #D1D3D4, #231F20);
+    background: linear-gradient(90deg, #D1D3D4, #B1B3B4, #D1D3D4);
     transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
     border-radius: 2px;
 }
 
 .section-title.animate::after {
     width: 180px;
-    background: linear-gradient(90deg, #231F20, #D1D3D4, #231F20);
-    box-shadow: 0 4px 16px rgba(35, 31, 32, 0.3);
+    background: linear-gradient(90deg, #D1D3D4, #B1B3B4, #D1D3D4);
+    box-shadow: 0 4px 16px rgba(209, 211, 212, 0.4);
 }
 
 .service-item {
@@ -1022,14 +1022,14 @@ body[lang="ar"] .service-content {
     left: 0;
     width: 0;
     height: 4px;
-    background: linear-gradient(90deg, #231F20, #D1D3D4);
+    background: linear-gradient(90deg, #D1D3D4, #B1B3B4);
     transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 2px;
 }
 
 .service-item:hover .service-content h3::after {
     width: 100px;
-    box-shadow: 0 4px 16px rgba(35, 31, 32, 0.3);
+    box-shadow: 0 4px 16px rgba(209, 211, 212, 0.4);
 }
 
 body[lang="ar"] .service-content h3::after {
@@ -1039,7 +1039,7 @@ body[lang="ar"] .service-content h3::after {
 
 .service-content p {
     margin-bottom: 2.5rem;
-    color: #666;
+    color: #D1D3D4;
     line-height: 1.9;
     font-size: 1.3rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1049,7 +1049,7 @@ body[lang="ar"] .service-content h3::after {
 }
 
 .service-item:hover .service-content p {
-    color: #555;
+    color: #C1C3C4;
     transform: translateX(8px);
 }
 
@@ -1064,7 +1064,7 @@ body[lang="ar"] .service-item:hover .service-content p {
 
 .service-features li {
     padding: 1rem 0;
-    color: #555;
+    color: #D1D3D4;
     position: relative;
     padding-left: 2.5rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1077,7 +1077,7 @@ body[lang="ar"] .service-item:hover .service-content p {
 
 .service-item:hover .service-features li {
     transform: translateX(12px);
-    color: #333;
+    color: #C1C3C4;
 }
 
 body[lang="ar"] .service-item:hover .service-features li {
@@ -1090,8 +1090,8 @@ body[lang="ar"] .service-features li {
 }
 
 .service-features li::before {
-    content: '●';
-    color: #231F20;
+    content: '◆';
+    color: #D1D3D4;
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -1106,9 +1106,9 @@ body[lang="ar"] .service-features li {
 }
 
 .service-item:hover .service-features li::before {
-    color: #D1D3D4;
+    color: #B1B3B4;
     transform: scale(1.6);
-    text-shadow: 0 4px 8px rgba(35, 31, 32, 0.3);
+    text-shadow: 0 4px 8px rgba(209, 211, 212, 0.4);
 }
 
 body[lang="ar"] .service-features li::before {
@@ -1301,11 +1301,11 @@ body[lang="ar"] .service-features li::before {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ffffff, #f0f0f0);
+    background: linear-gradient(90deg, #D1D3D4, #B1B3B4);
     width: 0%;
     transition: width 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 4px;
-    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 16px rgba(209, 211, 212, 0.6);
 }
 
 /* Video Info Overlay */
@@ -1852,6 +1852,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .service-content p {
         font-size: 1.15rem;
         margin-bottom: 1.5rem;
+        color: #D1D3D4;
     }
 
     .service-features {
@@ -1868,6 +1869,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
         font-size: 1.05rem;
         padding: 0.8rem 0;
         padding-left: 3rem;
+        color: #D1D3D4;
     }
 
     body[lang="ar"] .service-features li {
@@ -2027,6 +2029,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     .service-features li {
         font-size: 1rem;
+        color: #D1D3D4;
     }
 
     .contact h2 {
