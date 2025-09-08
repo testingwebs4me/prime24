@@ -13,13 +13,18 @@
 }
 
 body {
-    font-family: 'TestGemola', Arial, sans-serif;
+    font-family: 'TestGemola', Arial, sans-serif !important;
     line-height: 1.6;
     color: #231F20;
     overflow-x: hidden;
     background: #FFFFFF;
     opacity: 1;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Force Gemola font on ALL text elements */
+h1, h2, h3, h4, h5, h6, p, span, div, a, button, li {
+    font-family: 'TestGemola', Arial, sans-serif !important;
 }
 
 .hero-title-main {
