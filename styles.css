@@ -1097,7 +1097,7 @@ body[lang="ar"] .service-item:hover .service-content p {
 
 .service-features li {
     padding: 1rem 0;
-    color: #D1D3D4;
+    color: #231F20;
     position: relative;
     padding-left: 2.5rem;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1110,7 +1110,7 @@ body[lang="ar"] .service-item:hover .service-content p {
 
 .service-item:hover .service-features li {
     transform: translateX(12px);
-    color: #D1D3D4;
+    color: #231F20;
 }
 
 body[lang="ar"] .service-item:hover .service-features li {
@@ -1124,7 +1124,7 @@ body[lang="ar"] .service-features li {
 
 .service-features li::before {
     content: '◆';
-    color: #D1D3D4;
+    color: #231F20;
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -1139,9 +1139,9 @@ body[lang="ar"] .service-features li {
 }
 
 .service-item:hover .service-features li::before {
-    color: #B1B3B4;
+    color: #231F20;
     transform: scale(1.6);
-    text-shadow: 0 4px 8px rgba(209, 211, 212, 0.4);
+    text-shadow: 0 4px 8px rgba(35, 31, 32, 0.4);
 }
 
 body[lang="ar"] .service-features li::before {
@@ -1902,7 +1902,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
         font-size: 1.05rem;
         padding: 0.8rem 0;
         padding-left: 3rem;
-        color: #D1D3D4;
+        color: #231F20;
     }
 
     body[lang="ar"] .service-features li {
@@ -2063,7 +2063,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
     .service-features li {
         font-size: 1rem;
-        color: #D1D3D4;
+        color: #231F20;
     }
 
     .contact h2 {
