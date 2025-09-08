@@ -7,7 +7,7 @@
 /* Custom Font Loading */
 @font-face {
     font-family: 'CustomFont';
-    src: url('https://drive.google.com/uc?export=download&id=1L34CEGeiV95fsL-dluaCWQL6xZrF-jpT') format('truetype');
+    src: url('https://raw.githubusercontent.com/testingwebs4me/prime24/main/NotoSansArabic-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
     font-display: block;
@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: 'CustomFont';
-    src: url('https://drive.google.com/uc?export=download&id=1qxpxL6dMykyLRUpyuNibDJJ7Ipsfu7H5') format('truetype');
+    src: url('https://raw.githubusercontent.com/testingwebs4me/prime24/main/NotoSansArabic-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: block;
@@ -23,7 +23,7 @@
 
 @font-face {
     font-family: 'CustomFont';
-    src: url('https://drive.google.com/uc?export=download&id=1gLe2W56PF7Vx1P32LOx7GKVH5kL8aMcO') format('truetype');
+    src: url('https://raw.githubusercontent.com/testingwebs4me/prime24/main/NotoSansArabic-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: block;
@@ -31,7 +31,7 @@
 
 @font-face {
     font-family: 'CustomFont';
-    src: url('https://drive.google.com/uc?export=download&id=1PkxOQfa0pB3Ee0yka5EtkNRtXSgd3O4O') format('truetype');
+    src: url('https://raw.githubusercontent.com/testingwebs4me/prime24/main/NotoSansArabic-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: block;
