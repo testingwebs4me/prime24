@@ -162,10 +162,15 @@ function initVideoPlayer() {
 }
 
 // Event listeners
-window.addEventListener('scroll', toggleScrollToTopButton);
+window.addEventListener('scroll', toggleScrollToTopButton, { passive: true });
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', function() {
+    // Preload critical elements for performance
+    heroImage = document.querySelector('.hero-image');
+    heroContent = document.querySelector('.hero-content');
+    nav = document.querySelector('nav');
+    
     loadLanguagePreference();
     
     // Ensure hero elements are properly hidden initially
@@ -173,13 +178,13 @@ window.addEventListener('DOMContentLoaded', function() {
     if (heroDescription) {
         heroDescription.style.opacity = '0';
         heroDescription.style.visibility = 'hidden';
-        heroDescription.style.transform = 'translateY(30px)';
+        heroDescription.style.transform = 'translate3d(0, 30px, 0)';
+        heroDescription.style.willChange = 'transform, opacity, visibility';
     }
     
     initScrollAnimations();
     
     // Initialize navbar as visible
-    const nav = document.querySelector('nav');
     nav.classList.add('nav-visible');
     
     // Initialize video player
@@ -221,6 +226,16 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Clean up will-change after animations complete
+    setTimeout(() => {
+        const animatedElements = document.querySelectorAll('[style*="will-change"]');
+        animatedElements.forEach(el => {
+            if (el.style.willChange) {
+                el.style.willChange = 'auto';
+            }
+        });
+    }, 5000);
 });
 
 // Close mobile menu when clicking outside
@@ -263,7 +278,7 @@ window.addEventListener('beforeunload', function() {
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px'
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -276,11 +291,14 @@ function initScrollAnimations() {
                     const features = entry.target.querySelectorAll('.service-features li');
                     features.forEach((feature, index) => {
                         setTimeout(() => {
-                            feature.style.transform = 'translateX(0)';
+                            feature.style.transform = 'translate3d(0, 0, 0)';
                             feature.style.opacity = '1';
                         }, index * 100);
                     });
                 }
+                
+                // Unobserve element after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -300,11 +318,15 @@ function initScrollAnimations() {
         if (el.classList.contains('service-item')) {
             const features = el.querySelectorAll('.service-features li');
             features.forEach(feature => {
-                feature.style.transform = 'translateX(-20px)';
+                feature.style.transform = 'translate3d(-20px, 0, 0)';
                 feature.style.opacity = '0';
                 feature.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                feature.style.willChange = 'transform, opacity';
             });
         }
+        
+        // Add will-change for better performance
+        el.style.willChange = 'transform, opacity';
         
         observer.observe(el);
     });
@@ -312,21 +334,24 @@ function initScrollAnimations() {
 
 // Enhanced parallax effect for hero with performance optimization
 let ticking = false;
+let heroImage, heroContent;
 
 function updateParallax() {
     const scrolled = window.pageYOffset;
-    const heroImage = document.querySelector('.hero-image');
-    const heroContent = document.querySelector('.hero-content');
+    
+    // Cache DOM elements on first run
+    if (!heroImage) heroImage = document.querySelector('.hero-image');
+    if (!heroContent) heroContent = document.querySelector('.hero-content');
     
     if (scrolled < window.innerHeight) {
         if (heroImage) {
             const rate = scrolled * -0.2;
-            heroImage.style.transform = `translateY(${rate}px) scale(${1.02 + scrolled * 0.0001})`;
+            heroImage.style.transform = `translate3d(0, ${rate}px, 0) scale(${1.02 + scrolled * 0.0001})`;
         }
         
         if (heroContent) {
             const rate = scrolled * 0.1;
-            heroContent.style.transform = `translateY(${rate}px)`;
+            heroContent.style.transform = `translate3d(0, ${rate}px, 0)`;
             heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.2;
         }
     }
@@ -341,14 +366,17 @@ function requestParallaxUpdate() {
     }
 }
 
-window.addEventListener('scroll', requestParallaxUpdate);
+window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
 
 // Smooth navigation background transition
 let lastScrollTop = 0;
 let navbarTimeout;
+let nav;
 
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
+    // Cache nav element
+    if (!nav) nav = document.querySelector('nav');
+    
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     // Handle navbar hide/show
@@ -380,7 +408,7 @@ window.addEventListener('scroll', () => {
     }
     
     lastScrollTop = scrollTop;
-});
+}, { passive: true });
 
 // Add luxury loading animation
 // Removed loading animation to prevent flash
