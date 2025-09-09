@@ -56,19 +56,23 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, li {
     background: rgba(35, 31, 32, 0.9);
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    padding: 8px 16px;
+    padding: 12px 20px;
     border-radius: 25px;
     z-index: 1001;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
     backdrop-filter: blur(15px);
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(35, 31, 32, 0.3);
     cursor: pointer;
-    min-width: 50px;
+    min-width: 60px;
     text-align: center;
     letter-spacing: 1px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .language-toggle:hover {
@@ -191,7 +195,7 @@ nav:hover {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    height: 70px;
+    height: 80px;
 }
 
 body[lang="ar"] .nav-container {
@@ -200,7 +204,7 @@ body[lang="ar"] .nav-container {
 
 .nav-logo {
     display: block;
-    height: 72px;
+    height: 75px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -292,9 +296,14 @@ body[lang="ar"] .nav-links {
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    padding: 8px;
+    padding: 12px;
     transition: all 0.3s ease;
     border-radius: 8px;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .nav-mobile-right {
@@ -304,10 +313,10 @@ body[lang="ar"] .nav-links {
 }
 
 .mobile-menu-toggle span {
-    width: 28px;
-    height: 3px;
+    width: 32px;
+    height: 4px;
     background: white;
-    margin: 4px 0;
+    margin: 5px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
 }
@@ -317,7 +326,7 @@ body[lang="ar"] .nav-links {
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(-45deg) translate(-6px, 7px);
+    transform: rotate(-45deg) translate(-7px, 8px);
 }
 
 .mobile-menu-toggle.active span:nth-child(2) {
@@ -326,19 +335,19 @@ body[lang="ar"] .nav-links {
 }
 
 .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(45deg) translate(-6px, -7px);
+    transform: rotate(45deg) translate(-7px, -8px);
 }
 
 /* Mobile Menu */
 .mobile-menu {
     display: none;
     position: fixed;
-    top: 90px;
+    top: 100px;
     left: 0;
     right: 0;
     background: rgba(35, 31, 32, 0.98);
     backdrop-filter: blur(30px);
-    padding: 3rem;
+    padding: 2rem;
     z-index: 999;
     transform: translateY(-30px);
     opacity: 0;
@@ -363,7 +372,7 @@ body[lang="ar"] .mobile-menu ul {
 }
 
 .mobile-menu ul li {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     transform: translateY(30px);
     opacity: 0;
     animation: mobileMenuSlideIn 0.4s ease forwards;
@@ -384,16 +393,21 @@ body[lang="ar"] .mobile-menu ul {
 .mobile-menu ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 500;
-    padding: 1.5rem;
+    padding: 1.8rem 2rem;
     display: block;
-    border-radius: 15px;
+    border-radius: 20px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
     letter-spacing: 0.5px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .mobile-menu ul li a::before {
@@ -413,18 +427,18 @@ body[lang="ar"] .mobile-menu ul {
 
 .mobile-menu ul li a:hover {
     background: rgba(209, 211, 212, 0.1);
-    transform: translateX(10px) scale(1.01);
+    transform: scale(1.02);
     border-left: 4px solid #D1D3D4;
-    padding-left: 2rem;
+    padding-left: 2.2rem;
     box-shadow: 0 8px 32px rgba(209, 211, 212, 0.1);
 }
 
 body[lang="ar"] .mobile-menu ul li a:hover {
-    transform: translateX(-10px) scale(1.01);
+    transform: scale(1.02);
     border-left: none;
     border-right: 4px solid #D1D3D4;
-    padding-left: 1.5rem;
-    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2.2rem;
 }
 
 /* Hero Section */
@@ -552,7 +566,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
 }
 
 .hero-title-main {
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: 100;
     letter-spacing: 20px;
     text-transform: uppercase;
@@ -606,7 +620,7 @@ body[lang="ar"] .mobile-menu ul li a:hover {
 }
 
 .hero-title-sub {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 300;
     letter-spacing: 6px;
     opacity: 0.92;
@@ -627,7 +641,7 @@ body[lang="ar"] .hero-title-sub {
 }
 
 .hero-description {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 300;
     line-height: 1.8;
     opacity: 0;
@@ -675,8 +689,8 @@ body[lang="ar"] .hero-title-sub {
 .cta-button {
     display: inline-flex;
     align-items: center;
-    padding: 1.5rem 4rem;
-    font-size: 1.1rem;
+    padding: 1.8rem 4.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     text-decoration: none;
     border-radius: 60px;
@@ -689,6 +703,7 @@ body[lang="ar"] .hero-title-sub {
     letter-spacing: 1.5px;
     font-family: 'TestGemola', Arial, sans-serif !important;
     transform: translateY(0) scale(1);
+    min-height: 60px;
 }
 
 .cta-button::before {
@@ -1721,13 +1736,13 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .scroll-to-top {
         bottom: 30px;
         right: 30px;
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
     }
 
     .scroll-to-top::after {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     body[lang="ar"] .scroll-to-top {
@@ -1738,15 +1753,16 @@ body[lang="ar"] .mobile-menu .lang-ar {
     /* Language Toggle Mobile */
     .language-toggle {
         position: fixed;
-        top: 12px;
-        right: 70px;
+        top: 15px;
+        right: 80px;
         background: rgba(35, 31, 32, 0.95);
         color: white;
         border: 2px solid rgba(255, 255, 255, 0.4);
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        border-radius: 20px;
-        min-width: 45px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        border-radius: 22px;
+        min-width: 55px;
+        min-height: 44px;
         backdrop-filter: blur(15px);
         box-shadow: 0 4px 20px rgba(35, 31, 32, 0.4);
     }
@@ -1761,7 +1777,7 @@ body[lang="ar"] .mobile-menu .lang-ar {
     /* Navigation Mobile */
     .nav-container {
         padding: 0 20px;
-        height: 60px;
+        height: 70px;
     }
 
     .nav-links {
@@ -1773,38 +1789,38 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .nav-logo {
-        height: 50px;
+        height: 60px;
     }
 
     /* Mobile Menu */
     .mobile-menu {
-        top: 70px;
+        top: 80px;
     }
 
     /* Hero Mobile */
     .hero {
         padding-top: 0;
         height: 95vh;
-        min-height: 600px;
+        min-height: 650px;
     }
 
     .hero-title-main {
-        font-size: 4rem;
-        letter-spacing: 10px;
+        font-size: 4.5rem;
+        letter-spacing: 8px;
         margin-bottom: 1rem;
     }
 
     body[lang="ar"] .hero-title-main {
-        letter-spacing: 6px;
+        letter-spacing: 4px;
     }
 
     .hero-title-sub {
-        font-size: 1.6rem;
-        letter-spacing: 3px;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
     }
 
     .hero-description {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
         margin-bottom: 2rem;
         line-height: 1.7;
     }
@@ -1816,11 +1832,12 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .cta-button {
-        padding: 1.2rem 3rem;
-        font-size: 1.05rem;
+        padding: 1.5rem 3.5rem;
+        font-size: 1.15rem;
         width: 100%;
-        max-width: 320px;
+        max-width: 350px;
         justify-content: center;
+        min-height: 56px;
     }
 
     .hero-content {
@@ -1836,8 +1853,8 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .scroll-arrow {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
     }
 
     /* Services Mobile */
@@ -1960,13 +1977,13 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .scroll-to-top {
         bottom: 25px;
         right: 25px;
-        width: 45px;
-        height: 45px;
-        font-size: 16px;
+        width: 52px;
+        height: 52px;
+        font-size: 18px;
     }
 
     .scroll-to-top::after {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     body[lang="ar"] .scroll-to-top {
@@ -1975,48 +1992,51 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .language-toggle {
-        top: 10px;
-        right: 65px;
-        padding: 5px 10px;
-        font-size: 0.75rem;
-        min-width: 40px;
-        border-radius: 18px;
+        top: 12px;
+        right: 70px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        min-width: 50px;
+        min-height: 40px;
+        border-radius: 20px;
     }
 
     .nav-logo {
-        height: 45px;
+        height: 55px;
     }
 
     .mobile-menu {
-        top: 65px;
-        padding: 2rem;
+        top: 75px;
+        padding: 1.5rem;
     }
 
     /* Hero Extra Small Mobile */
     .hero {
         padding-top: 0;
         height: 90vh;
-        min-height: 550px;
+        min-height: 600px;
     }
 
     .hero-title-main {
-        font-size: 3.2rem;
-        letter-spacing: 6px;
+        font-size: 3.8rem;
+        letter-spacing: 4px;
     }
 
     .hero-title-sub {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         letter-spacing: 2px;
     }
 
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         line-height: 1.7;
     }
 
     .cta-button {
-        padding: 1rem 2.5rem;
-        font-size: 1rem;
+        padding: 1.3rem 3rem;
+        font-size: 1.1rem;
+        min-height: 52px;
+        max-width: 320px;
     }
 
     .hero-content {
@@ -2032,8 +2052,8 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .scroll-arrow {
-        width: 30px;
-        height: 30px;
+        width: 36px;
+        height: 36px;
     }
 
     .section-title {
