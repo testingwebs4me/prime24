@@ -177,9 +177,8 @@ window.addEventListener('DOMContentLoaded', function() {
     const heroDescription = document.querySelector('.hero-description');
     if (heroDescription) {
         heroDescription.style.opacity = '0';
-        heroDescription.style.visibility = 'hidden';
         heroDescription.style.transform = 'translate3d(0, 30px, 0)';
-        heroDescription.style.willChange = 'transform, opacity, visibility';
+        heroDescription.style.willChange = 'transform, opacity';
     }
     
     initScrollAnimations();

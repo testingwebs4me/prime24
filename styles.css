@@ -656,7 +656,7 @@ body[lang="ar"] .hero-title-sub {
     font-size: 1.7rem;
     font-weight: 300;
     line-height: 1.8;
-    opacity: 0 !important;
+    opacity: 0;
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
@@ -664,7 +664,6 @@ body[lang="ar"] .hero-title-sub {
     letter-spacing: 0.5px;
     animation: heroDescriptionFade 1.5s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
     transform: translate3d(0, 30px, 0);
-    visibility: hidden;
     will-change: transform, opacity, visibility;
 }
 
@@ -672,15 +671,10 @@ body[lang="ar"] .hero-title-sub {
     0% { 
         opacity: 0; 
         transform: translate3d(0, 30px, 0);
-        visibility: hidden;
-    }
-    1% {
-        visibility: visible;
     }
     100% { 
         opacity: 0.88; 
         transform: translate3d(0, 0, 0);
-        visibility: visible;
     }
 }
 
