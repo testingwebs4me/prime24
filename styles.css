@@ -128,8 +128,7 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, li {
 }
 
 .scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
     transform: translateY(0) scale(1);
 }
 

@@ -171,7 +171,7 @@ window.addEventListener('DOMContentLoaded', function() {
     heroContent = document.querySelector('.hero-content');
     nav = document.querySelector('nav');
     
-    // Set initial language to ensure content is visible
+    // Set initial language if not already set
     const body = document.body;
     const html = document.documentElement;
     if (!body.getAttribute('lang')) {
@@ -182,14 +182,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     
     loadLanguagePreference();
-    
-    // Ensure hero elements are properly hidden initially
-    const heroDescription = document.querySelector('.hero-description');
-    if (heroDescription) {
-        heroDescription.style.opacity = '0';
-        heroDescription.style.transform = 'translate3d(0, 30px, 0)';
-        heroDescription.style.willChange = 'transform, opacity';
-    }
     
     initScrollAnimations();
     
