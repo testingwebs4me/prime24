@@ -167,6 +167,15 @@ window.addEventListener('scroll', toggleScrollToTopButton);
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', function() {
     loadLanguagePreference();
+    
+    // Ensure hero elements are properly hidden initially
+    const heroDescription = document.querySelector('.hero-description');
+    if (heroDescription) {
+        heroDescription.style.opacity = '0';
+        heroDescription.style.visibility = 'hidden';
+        heroDescription.style.transform = 'translateY(30px)';
+    }
+    
     initScrollAnimations();
     
     // Initialize navbar as visible

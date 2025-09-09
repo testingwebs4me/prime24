@@ -644,23 +644,30 @@ body[lang="ar"] .hero-title-sub {
     font-size: 1.7rem;
     font-weight: 300;
     line-height: 1.8;
-    opacity: 0;
+    opacity: 0 !important;
     max-width: 700px;
     margin: 0 auto;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
     font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.5px;
-    animation: heroDescriptionFade 1.5s cubic-bezier(0.23, 1, 0.32, 1) 1.5s forwards;
+    animation: heroDescriptionFade 1.5s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+    transform: translateY(30px);
+    visibility: hidden;
 }
 
 @keyframes heroDescriptionFade {
     0% { 
         opacity: 0; 
         transform: translateY(30px);
+        visibility: hidden;
+    }
+    1% {
+        visibility: visible;
     }
     100% { 
         opacity: 0.88; 
         transform: translateY(0);
+        visibility: visible;
     }
 }
 
