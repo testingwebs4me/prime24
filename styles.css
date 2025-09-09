@@ -1599,33 +1599,22 @@ body[lang="ar"] .service-features li::before {
 /* Language visibility classes */
 .lang-en, .lang-ar {
     display: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 body[lang="en"] .lang-en {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 body[lang="en"] .lang-en.inline {
     display: inline;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 body[lang="ar"] .lang-ar {
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 body[lang="ar"] .lang-ar.inline {
     display: inline;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Fix mobile menu language display */

@@ -171,6 +171,16 @@ window.addEventListener('DOMContentLoaded', function() {
     heroContent = document.querySelector('.hero-content');
     nav = document.querySelector('nav');
     
+    // Set initial language to ensure content is visible
+    const body = document.body;
+    const html = document.documentElement;
+    if (!body.getAttribute('lang')) {
+        body.setAttribute('lang', 'en');
+        body.setAttribute('dir', 'ltr');
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+    }
+    
     loadLanguagePreference();
     
     // Ensure hero elements are properly hidden initially
