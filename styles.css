@@ -1091,9 +1091,9 @@ body[lang="ar"] .service-content {
     transition: all 0.4s ease;
     filter: brightness(1.05) contrast(1.05) saturate(1.05);
     will-change: transform, filter;
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .service-item:hover .gallery-slide img {
@@ -1355,7 +1355,7 @@ body[lang="ar"] .service-features li::before {
 
 .video-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     border-radius: 30px;
     overflow: hidden;
@@ -1374,7 +1374,7 @@ body[lang="ar"] .service-features li::before {
 .main-video {
     width: 100%;
     height: auto;
-    min-height: 500px;
+    min-height: 400px;
     object-fit: cover;
     display: block;
     transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -1391,22 +1391,22 @@ body[lang="ar"] .service-features li::before {
 @media (max-aspect-ratio: 1/1) {
     /* Vertical/iPhone videos (9:16 or similar) */
     .video-container {
-        max-width: 700px;
+        max-width: 500px;
     }
     
     .main-video {
-        min-height: 700px;
+        min-height: 500px;
     }
 }
 
 @media (aspect-ratio: 1/1) {
     /* Square videos (1:1) */
     .video-container {
-        max-width: 800px;
+        max-width: 600px;
     }
     
     .main-video {
-        min-height: 600px;
+        min-height: 450px;
     }
 }
 
@@ -1820,12 +1820,13 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .video-container {
-        margin: 0 30px;
+        margin: 0 20px;
+        max-width: 100%;
         border-radius: 25px;
     }
 
     .main-video {
-        min-height: 350px;
+        min-height: 250px;
     }
 
     .video-controls {
@@ -1903,12 +1904,13 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .video-container {
-        margin: 0 20px;
+        margin: 0 15px;
+        max-width: calc(100% - 30px);
         border-radius: 20px;
     }
 
     .main-video {
-        min-height: 300px;
+        min-height: 200px;
     }
 
     .video-controls {
@@ -2166,11 +2168,17 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .service-image {
         max-width: 100%;
         padding: 0 20px;
+        height: 300px;
     }
 
-    .service-image img {
-        height: 320px;
+    .gallery-slide img {
+        height: 300px;
         border-radius: 20px;
+        object-fit: cover;
+        width: 100%;
+        display: block;
+        opacity: 1;
+        visibility: visible;
     }
 
     /* Contact Mobile */
