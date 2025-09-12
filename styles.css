@@ -864,16 +864,9 @@ body[lang="ar"] .hero-title-sub {
     background: #FFFFFF;
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 80px, 0);
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
-    will-change: transform, opacity;
-    contain: layout style paint;
-}
-
-.services.animate {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+    contain: layout style paint;
 }
 
 .services::before {
@@ -905,17 +898,10 @@ body[lang="ar"] .hero-title-sub {
     color: #231F20;
     font-weight: 200;
     position: relative;
-    opacity: 0;
-    transform: translate3d(0, 50px, 0);
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
-    letter-spacing: 3px;
-    font-family: 'TestGemola', Arial, sans-serif !important;
-    will-change: transform, opacity;
-}
-
-.section-title.animate {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+    letter-spacing: 3px;
+    font-family: 'TestGemola', Arial, sans-serif !important;
 }
 
 .section-title::after {
@@ -929,11 +915,7 @@ body[lang="ar"] .hero-title-sub {
     background: linear-gradient(90deg, #D1D3D4, #B1B3B4, #D1D3D4);
     transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
     border-radius: 2px;
-}
-
-.section-title.animate::after {
     width: 180px;
-    background: linear-gradient(90deg, #D1D3D4, #B1B3B4, #D1D3D4);
     box-shadow: 0 4px 16px rgba(209, 211, 212, 0.4);
 }
 
@@ -942,9 +924,8 @@ body[lang="ar"] .hero-title-sub {
     align-items: center;
     margin-bottom: 10rem;
     gap: 6rem;
-    opacity: 0;
-    transform: translate3d(0, 80px, 0);
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
     position: relative;
     will-change: transform, opacity;
     contain: layout style paint;
@@ -965,13 +946,7 @@ body[lang="ar"] .hero-title-sub {
 }
 
 .service-item:hover::before {
-    opacity: 1;
     transform: scale(1.03);
-}
-
-.service-item.animate {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
 }
 
 .service-item:nth-child(even) {
@@ -1496,13 +1471,11 @@ body[lang="ar"] .service-features li::before {
     font-size: 3.5rem;
     margin-bottom: 3rem;
     font-weight: 200;
-    opacity: 0;
-    transform: translate3d(0, 50px, 0);
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
     letter-spacing: 3px;
     position: relative;
     font-family: 'TestGemola', Arial, sans-serif !important;
-    will-change: transform, opacity;
 }
 
 .contact h2::after {
@@ -1514,36 +1487,20 @@ body[lang="ar"] .service-features li::before {
     width: 0;
     height: 3px;
     background: linear-gradient(90deg, transparent, white, transparent);
-    transition: width 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.8s;
-}
-
-.contact h2.animate {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-}
-
-.contact h2.animate::after {
     width: 120px;
 }
 
 .contact p {
     font-size: 1.5rem;
     margin-bottom: 5rem;
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-    transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+    opacity: 0.92;
+    transform: translate3d(0, 0, 0);
     line-height: 1.8;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'TestGemola', Arial, sans-serif !important;
     letter-spacing: 0.5px;
-    will-change: transform, opacity;
-}
-
-.contact p.animate {
-    opacity: 0.92;
-    transform: translate3d(0, 0, 0);
 }
 
 .contact-info {
@@ -1566,8 +1523,8 @@ body[lang="ar"] .service-features li::before {
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    transform: translate3d(0, 50px, 0) scale(0.9);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
     cursor: pointer;
     will-change: transform, opacity, background, border-color, box-shadow;
 }
@@ -1584,12 +1541,6 @@ body[lang="ar"] .service-features li::before {
 }
 
 .contact-item:hover::before {
-    left: 100%;
-}
-
-.contact-item.animate {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
 }
 
 .contact-item:hover {

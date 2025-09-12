@@ -166,11 +166,6 @@ window.addEventListener('scroll', toggleScrollToTopButton, { passive: true });
 
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', function() {
-    // Preload critical elements for performance
-    heroImage = document.querySelector('.hero-image');
-    heroContent = document.querySelector('.hero-content');
-    nav = document.querySelector('nav');
-    
     // Set initial language if not already set
     const body = document.body;
     const html = document.documentElement;
@@ -183,9 +178,8 @@ window.addEventListener('DOMContentLoaded', function() {
     
     loadLanguagePreference();
     
-    initScrollAnimations();
-    
-    // Initialize navbar as visible
+    // Initialize navbar
+    nav = document.querySelector('nav');
     nav.classList.add('nav-visible');
     
     // Initialize galleries
@@ -193,8 +187,8 @@ window.addEventListener('DOMContentLoaded', function() {
         showSlide(galleryName, 1);
     });
     
-    // Start gallery autoplay after 3 seconds
-    setTimeout(startGalleryAutoplay, 3000);
+    // Start gallery autoplay
+    startGalleryAutoplay();
     
     // Initialize video player
     const video = document.getElementById('mainVideo');
@@ -235,16 +229,6 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Clean up will-change after animations complete
-    setTimeout(() => {
-        const animatedElements = document.querySelectorAll('[style*="will-change"]');
-        animatedElements.forEach(el => {
-            if (el.style.willChange) {
-                el.style.willChange = 'auto';
-            }
-        });
-    }, 5000);
 });
 
 // Close mobile menu when clicking outside
@@ -278,72 +262,8 @@ if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
 
-// Block any auto-scrolling on page unload/reload
-window.addEventListener('beforeunload', function() {
-    window.scrollTo(0, 0);
-});
-
-// Luxury scroll animations with intersection observer
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                
-                // Add staggered animation for service features
-                if (entry.target.classList.contains('service-item')) {
-                    const features = entry.target.querySelectorAll('.service-features li');
-                    features.forEach((feature, index) => {
-                        setTimeout(() => {
-                            feature.style.transform = 'translate3d(0, 0, 0)';
-                            feature.style.opacity = '1';
-                        }, index * 100);
-                    });
-                }
-                
-                // Unobserve element after animation to improve performance
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
-    const elementsToAnimate = document.querySelectorAll(
-        '.services, .section-title, .service-item, .contact h2, .contact p, .contact-item'
-    );
-
-    elementsToAnimate.forEach((el, index) => {
-        // Add staggered delay for contact items
-        if (el.classList.contains('contact-item')) {
-            el.style.transitionDelay = `${index * 0.15}s`;
-        }
-        
-        // Prepare service features for staggered animation
-        if (el.classList.contains('service-item')) {
-            const features = el.querySelectorAll('.service-features li');
-            features.forEach(feature => {
-                feature.style.transform = 'translate3d(-20px, 0, 0)';
-                feature.style.opacity = '0';
-                feature.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                feature.style.willChange = 'transform, opacity';
-            });
-        }
-        
-        // Add will-change for better performance
-        el.style.willChange = 'transform, opacity';
-        
-        observer.observe(el);
-    });
-}
-
 // Enhanced parallax effect for hero with performance optimization
 let ticking = false;
-let heroImage, heroContent;
 
 // MOBILE-OPTIMIZED GALLERY SYSTEM
 let currentSlides = {
