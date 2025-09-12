@@ -188,6 +188,14 @@ window.addEventListener('DOMContentLoaded', function() {
     // Initialize navbar as visible
     nav.classList.add('nav-visible');
     
+    // Initialize galleries
+    Object.keys(currentSlides).forEach(galleryName => {
+        showSlide(galleryName, 1);
+    });
+    
+    // Start gallery autoplay after 3 seconds
+    setTimeout(startGalleryAutoplay, 3000);
+    
     // Initialize video player
     const video = document.getElementById('mainVideo');
     if (video) {
@@ -336,6 +344,76 @@ function initScrollAnimations() {
 // Enhanced parallax effect for hero with performance optimization
 let ticking = false;
 let heroImage, heroContent;
+
+// MOBILE-OPTIMIZED GALLERY SYSTEM
+let currentSlides = {
+    'catering': 1,
+    'white-label': 1,
+    'hotels-cafes': 1
+};
+
+function changeSlide(galleryName, direction) {
+    const gallery = document.querySelector(`[data-gallery="${galleryName}"]`);
+    if (!gallery) return;
+    
+    const images = gallery.querySelectorAll('.gallery-image');
+    const dots = gallery.querySelectorAll('.dot');
+    const totalSlides = images.length;
+    
+    // Update current slide
+    currentSlides[galleryName] += direction;
+    
+    // Loop around
+    if (currentSlides[galleryName] > totalSlides) {
+        currentSlides[galleryName] = 1;
+    }
+    if (currentSlides[galleryName] < 1) {
+        currentSlides[galleryName] = totalSlides;
+    }
+    
+    // Update display
+    showSlide(galleryName, currentSlides[galleryName]);
+}
+
+function currentSlide(galleryName, slideNumber) {
+    currentSlides[galleryName] = slideNumber;
+    showSlide(galleryName, slideNumber);
+}
+
+function showSlide(galleryName, slideNumber) {
+    const gallery = document.querySelector(`[data-gallery="${galleryName}"]`);
+    if (!gallery) return;
+    
+    const images = gallery.querySelectorAll('.gallery-image');
+    const dots = gallery.querySelectorAll('.dot');
+    
+    // Hide all images
+    images.forEach(img => {
+        img.classList.remove('active');
+    });
+    
+    // Remove active from all dots
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+    });
+    
+    // Show current image and dot
+    if (images[slideNumber - 1]) {
+        images[slideNumber - 1].classList.add('active');
+    }
+    if (dots[slideNumber - 1]) {
+        dots[slideNumber - 1].classList.add('active');
+    }
+}
+
+// Auto-advance galleries every 4 seconds
+function startGalleryAutoplay() {
+    setInterval(() => {
+        Object.keys(currentSlides).forEach(galleryName => {
+            changeSlide(galleryName, 1);
+        });
+    }, 4000);
+}
 
 function updateParallax() {
     const scrolled = window.pageYOffset;
