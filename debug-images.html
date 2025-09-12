@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Debug Test</title>
+    <style>
+        .test-image {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            margin: 10px;
+            object-fit: cover;
+        }
+        .image-info {
+            font-family: monospace;
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    
+    <div class="image-info">Testing: images/catering_service.jpeg</div>
+    <img src="images/catering_service.jpeg" alt="Catering Service" class="test-image" onload="console.log('✅ Loaded: catering_service.jpeg')" onerror="console.log('❌ Failed: catering_service.jpeg')">
+    
+    <div class="image-info">Testing: images/Photo Apr 06, 3 46 52 PM.jpg</div>
+    <img src="images/Photo Apr 06, 3 46 52 PM.jpg" alt="Photo 1" class="test-image" onload="console.log('✅ Loaded: Photo Apr 06, 3 46 52 PM.jpg')" onerror="console.log('❌ Failed: Photo Apr 06, 3 46 52 PM.jpg')">
+    
+    <div class="image-info">Testing: images/Photo Apr 06, 3 47 25 PM.jpg</div>
+    <img src="images/Photo Apr 06, 3 47 25 PM.jpg" alt="Photo 2" class="test-image" onload="console.log('✅ Loaded: Photo Apr 06, 3 47 25 PM.jpg')" onerror="console.log('❌ Failed: Photo Apr 06, 3 47 25 PM.jpg')">
+    
+    <div class="image-info">Testing: images/WhatsApp Image 1447-03-13 at 18.00.51.jpeg</div>
+    <img src="images/WhatsApp Image 1447-03-13 at 18.00.51.jpeg" alt="WhatsApp 1" class="test-image" onload="console.log('✅ Loaded: WhatsApp Image 1447-03-13 at 18.00.51.jpeg')" onerror="console.log('❌ Failed: WhatsApp Image 1447-03-13 at 18.00.51.jpeg')">
+    
+    <div class="image-info">Testing: images/WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg</div>
+    <img src="images/WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg" alt="WhatsApp 2" class="test-image" onload="console.log('✅ Loaded: WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg')" onerror="console.log('❌ Failed: WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg')">
+    
+    <script>
+        // Check if images are loading
+        window.addEventListener('load', () => {
+            console.log('Page loaded, checking images...');
+            const images = document.querySelectorAll('.test-image');
+            images.forEach((img, index) => {
+                if (img.complete && img.naturalHeight !== 0) {
+                    console.log(`✅ Image ${index + 1} loaded successfully`);
+                } else {
+                    console.log(`❌ Image ${index + 1} failed to load`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
