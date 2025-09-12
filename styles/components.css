@@ -1,0 +1,298 @@
+/* Component styles */
+
+/* Language Toggle Button */
+.language-toggle {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    background: rgba(35, 31, 32, 0.9);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 25px;
+    z-index: 1001;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(35, 31, 32, 0.3);
+    cursor: pointer;
+    min-width: 60px;
+    text-align: center;
+    letter-spacing: 1px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-toggle:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #231F20;
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(35, 31, 32, 0.4);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #231F20 0%, #3a3436 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px) scale(0.8);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(35, 31, 32, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-to-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.scroll-to-top:hover::before {
+    left: 100%;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(135deg, #3a3436 0%, #231F20 100%);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 16px 48px rgba(35, 31, 32, 0.4);
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px) scale(1.02);
+    transition: all 0.2s ease;
+}
+
+/* Arrow styling */
+.scroll-to-top::after {
+    content: '↑';
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* RTL positioning for Arabic */
+body[lang="ar"] .scroll-to-top {
+    right: auto;
+    left: 40px;
+}
+
+/* CTA Buttons */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.8rem 4.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 60px;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'TestGemola', Arial, sans-serif !important;
+    transform: translate3d(0, 0, 0) scale(1);
+    min-height: 60px;
+    will-change: transform, background, color, border-color, box-shadow;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+}
+
+.cta-button:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+    color: #231F20;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 48px rgba(255, 255, 255, 0.2);
+}
+
+.cta-button.primary:hover {
+    background: transparent;
+    color: #FFFFFF;
+    border-color: #D1D3D4;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 24px 80px rgba(209, 211, 212, 0.3);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: #FFFFFF;
+    border-color: rgba(209, 211, 212, 0.4);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(209, 211, 212, 0.15);
+    border-color: #D1D3D4;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 24px 80px rgba(209, 211, 212, 0.2);
+}
+
+/* Video Controls */
+.video-control-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(20px);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-control-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.video-control-btn:hover::before {
+    left: 100%;
+}
+
+.video-control-btn:hover {
+    background: rgba(209, 211, 212, 0.3);
+    transform: scale(1.2);
+    box-shadow: 0 12px 40px rgba(209, 211, 212, 0.2);
+}
+
+.video-control-btn:active {
+    transform: scale(1.1);
+}
+
+.video-control-btn svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 8px;
+    background: rgba(209, 211, 212, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: progressShimmer 3s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+@keyframes progressShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-bar:hover {
+    height: 10px;
+    background: rgba(209, 211, 212, 0.4);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #D1D3D4, #B1B3B4);
+    width: 0%;
+    transition: width 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 4px;
+    box-shadow: 0 0 16px rgba(209, 211, 212, 0.6);
+}
+
+/* WhatsApp SVG Icon Styling */
+.whatsapp-icon {
+    width: 32px;
+    height: 32px;
+    fill: #25D366;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.contact-item:hover .whatsapp-icon {
+    fill: #20c55e;
+    transform: scale(1.3) rotate(8deg);
+    filter: drop-shadow(0 8px 16px rgba(37, 211, 102, 0.4));
+}

@@ -8,12 +8,12 @@
 </head>
 <body lang="en" dir="ltr">
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()" aria-label="Scroll to top"></button>
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top"></button>
 
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">
+            <a href="#" class="nav-logo" id="navLogo">
                 <img src="https://i.ibb.co/VpqxrBy2/prime-logo-white.png" alt="PRIME Logo">
             </a>
             <ul class="nav-links">
@@ -23,11 +23,11 @@
                 <li><a href="#contact" class="lang-en">Contact Us</a><a href="#contact" class="lang-ar">تواصل معنا</a></li>
             </ul>
             <div class="nav-mobile-right">
-                <button class="language-toggle" onclick="toggleLanguage()">
+                <button class="language-toggle" id="languageToggle">
                     <span class="lang-en">AR</span>
                     <span class="lang-ar">EN</span>
                 </button>
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -39,10 +39,10 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#catering" onclick="closeMobileMenu()" class="lang-en">Catering</a><a href="#catering" onclick="closeMobileMenu()" class="lang-ar">الضيافة</a></li>
-            <li><a href="#white-label" onclick="closeMobileMenu()" class="lang-en">White Label</a><a href="#white-label" onclick="closeMobileMenu()" class="lang-ar">خدمة العلامة البيضاء</a></li>
-            <li><a href="#supplying" onclick="closeMobileMenu()" class="lang-en">Hotels & Cafés</a><a href="#supplying" onclick="closeMobileMenu()" class="lang-ar">المقاهي والفنادق</a></li>
-            <li><a href="#contact" onclick="closeMobileMenu()" class="lang-en">Contact Us</a><a href="#contact" onclick="closeMobileMenu()" class="lang-ar">تواصل معنا</a></li>
+            <li><a href="#catering" class="mobile-menu-link lang-en">Catering</a><a href="#catering" class="mobile-menu-link lang-ar">الضيافة</a></li>
+            <li><a href="#white-label" class="mobile-menu-link lang-en">White Label</a><a href="#white-label" class="mobile-menu-link lang-ar">خدمة العلامة البيضاء</a></li>
+            <li><a href="#supplying" class="mobile-menu-link lang-en">Hotels & Cafés</a><a href="#supplying" class="mobile-menu-link lang-ar">المقاهي والفنادق</a></li>
+            <li><a href="#contact" class="mobile-menu-link lang-en">Contact Us</a><a href="#contact" class="mobile-menu-link lang-ar">تواصل معنا</a></li>
         </ul>
     </div>
 

@@ -1,3 +1,50 @@
+// Performance utilities
+const throttle = (func, limit) => {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+};
+
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
+// Cached DOM elements
+const DOMCache = {
+    scrollToTopBtn: null,
+    nav: null,
+    heroImage: null,
+    heroContent: null,
+    mobileMenu: null,
+    menuToggle: null,
+    video: null,
+    
+    init() {
+        this.scrollToTopBtn = document.getElementById('scrollToTop');
+        this.nav = document.querySelector('nav');
+        this.heroImage = document.querySelector('.hero-image');
+        this.heroContent = document.querySelector('.hero-content');
+        this.mobileMenu = document.getElementById('mobileMenu');
+        this.menuToggle = document.querySelector('.mobile-menu-toggle');
+        this.video = document.getElementById('mainVideo');
+    }
+};
+
 let currentLanguage = 'en';
 
 // Language management
@@ -42,37 +89,30 @@ function scrollToTop() {
 }
 
 // Show/hide scroll to top button based on scroll position
-function toggleScrollToTopButton() {
-    const scrollToTopBtn = document.getElementById('scrollToTop');
+const toggleScrollToTopButton = throttle(() => {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     
     if (scrollPosition > 300) {
-        scrollToTopBtn.classList.add('visible');
+        DOMCache.scrollToTopBtn?.classList.add('visible');
     } else {
-        scrollToTopBtn.classList.remove('visible');
+        DOMCache.scrollToTopBtn?.classList.remove('visible');
     }
-}
+}, 100);
 
 // Mobile menu functions
 function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    
-    mobileMenu.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    DOMCache.mobileMenu?.classList.toggle('active');
+    DOMCache.menuToggle?.classList.toggle('active');
 }
 
 function closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    
-    mobileMenu.classList.remove('active');
-    menuToggle.classList.remove('active');
+    DOMCache.mobileMenu?.classList.remove('active');
+    DOMCache.menuToggle?.classList.remove('active');
 }
 
 // Video Player Functions
 function initVideoPlayer() {
-    const video = document.getElementById('mainVideo');
+    const video = DOMCache.video;
     const playPauseBtn = document.getElementById('playPauseBtn');
     const soundBtn = document.getElementById('soundBtn');
     const progressFill = document.getElementById('progressFill');
@@ -80,45 +120,45 @@ function initVideoPlayer() {
     
     if (!video) return;
     
-    const playIcon = playPauseBtn.querySelector('.play-icon');
-    const pauseIcon = playPauseBtn.querySelector('.pause-icon');
-    const soundOffIcon = soundBtn.querySelector('.sound-off-icon');
-    const soundOnIcon = soundBtn.querySelector('.sound-on-icon');
+    const playIcon = playPauseBtn?.querySelector('.play-icon');
+    const pauseIcon = playPauseBtn?.querySelector('.pause-icon');
+    const soundOffIcon = soundBtn?.querySelector('.sound-off-icon');
+    const soundOnIcon = soundBtn?.querySelector('.sound-on-icon');
     
     // Play/Pause functionality
-    playPauseBtn.addEventListener('click', () => {
+    playPauseBtn?.addEventListener('click', () => {
         if (video.paused) {
             video.play();
-            playIcon.style.display = 'none';
-            pauseIcon.style.display = 'block';
+            if (playIcon) playIcon.style.display = 'none';
+            if (pauseIcon) pauseIcon.style.display = 'block';
         } else {
             video.pause();
-            playIcon.style.display = 'block';
-            pauseIcon.style.display = 'none';
+            if (playIcon) playIcon.style.display = 'block';
+            if (pauseIcon) pauseIcon.style.display = 'none';
         }
     });
     
     // Sound toggle functionality
-    soundBtn.addEventListener('click', () => {
+    soundBtn?.addEventListener('click', () => {
         if (video.muted) {
             video.muted = false;
-            soundOffIcon.style.display = 'none';
-            soundOnIcon.style.display = 'block';
+            if (soundOffIcon) soundOffIcon.style.display = 'none';
+            if (soundOnIcon) soundOnIcon.style.display = 'block';
         } else {
             video.muted = true;
-            soundOffIcon.style.display = 'block';
-            soundOnIcon.style.display = 'none';
+            if (soundOffIcon) soundOffIcon.style.display = 'block';
+            if (soundOnIcon) soundOnIcon.style.display = 'none';
         }
     });
     
     // Progress bar functionality
     video.addEventListener('timeupdate', () => {
         const progress = (video.currentTime / video.duration) * 100;
-        progressFill.style.width = progress + '%';
+        if (progressFill) progressFill.style.width = progress + '%';
     });
     
     // Click on progress bar to seek
-    progressBar.addEventListener('click', (e) => {
+    progressBar?.addEventListener('click', (e) => {
         const rect = progressBar.getBoundingClientRect();
         const clickX = e.clientX - rect.left;
         const width = rect.width;
@@ -132,7 +172,7 @@ function initVideoPlayer() {
     
     function showControls() {
         const controls = document.querySelector('.video-controls');
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 768 && controls) {
             controls.style.opacity = '1';
             clearTimeout(controlsTimeout);
             controlsTimeout = setTimeout(() => {
@@ -143,13 +183,14 @@ function initVideoPlayer() {
         }
     }
     
-    videoContainer.addEventListener('touchstart', showControls);
-    videoContainer.addEventListener('click', showControls);
+    videoContainer?.addEventListener('touchstart', showControls);
+    videoContainer?.addEventListener('click', showControls);
     
     // Show controls when video is paused on mobile
     video.addEventListener('pause', () => {
         if (window.innerWidth <= 768) {
-            document.querySelector('.video-controls').style.opacity = '1';
+            const controls = document.querySelector('.video-controls');
+            if (controls) controls.style.opacity = '1';
             clearTimeout(controlsTimeout);
         }
     });
@@ -161,119 +202,71 @@ function initVideoPlayer() {
     });
 }
 
-// Event listeners
-window.addEventListener('scroll', toggleScrollToTopButton, { passive: true });
+// Enhanced parallax effect with performance optimization
+let ticking = false;
 
-// Initialize on page load
-window.addEventListener('DOMContentLoaded', function() {
-    // Preload critical elements for performance
-    heroImage = document.querySelector('.hero-image');
-    heroContent = document.querySelector('.hero-content');
-    nav = document.querySelector('nav');
+const updateParallax = throttle(() => {
+    const scrolled = window.pageYOffset;
     
-    // Set initial language if not already set
-    const body = document.body;
-    const html = document.documentElement;
-    if (!body.getAttribute('lang')) {
-        body.setAttribute('lang', 'en');
-        body.setAttribute('dir', 'ltr');
-        html.setAttribute('lang', 'en');
-        html.setAttribute('dir', 'ltr');
+    if (scrolled < window.innerHeight) {
+        if (DOMCache.heroImage) {
+            const rate = scrolled * -0.2;
+            DOMCache.heroImage.style.transform = `translate3d(0, ${rate}px, 0) scale(${1.02 + scrolled * 0.0001})`;
+        }
+        
+        if (DOMCache.heroContent) {
+            const rate = scrolled * 0.1;
+            DOMCache.heroContent.style.transform = `translate3d(0, ${rate}px, 0)`;
+            DOMCache.heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.2;
+        }
+    }
+}, 16); // ~60fps
+
+// Smooth navigation background transition
+let lastScrollTop = 0;
+
+const handleNavbarScroll = throttle(() => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (!DOMCache.nav) return;
+    
+    // Handle navbar hide/show
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling down - hide navbar
+        DOMCache.nav.classList.add('nav-hidden');
+        DOMCache.nav.classList.remove('nav-visible');
+    } else if (scrollTop < lastScrollTop) {
+        // Scrolling up - show navbar
+        DOMCache.nav.classList.remove('nav-hidden');
+        DOMCache.nav.classList.add('nav-visible');
     }
     
-    loadLanguagePreference();
-    
-    initScrollAnimations();
-    
-    // Initialize navbar as visible
-    nav.classList.add('nav-visible');
-    
-    // Initialize video player
-    const video = document.getElementById('mainVideo');
-    if (video) {
-        initVideoPlayer();
+    // Show navbar when at top of page
+    if (scrollTop <= 50) {
+        DOMCache.nav.classList.remove('nav-hidden');
+        DOMCache.nav.classList.add('nav-visible');
     }
     
-    // Logo click functionality
-    document.querySelector('.nav-logo').addEventListener('click', function(e) {
-        e.preventDefault();
-        scrollToTop();
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            
-            // Only prevent default for logo/home links
-            if (href === '#' || href === '#home') {
-                e.preventDefault();
-                scrollToTop();
-                return;
-            }
-            
-            // Allow normal anchor navigation for other links
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const headerOffset = 120; // Account for fixed navigation
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Clean up will-change after animations complete
-    setTimeout(() => {
-        const animatedElements = document.querySelectorAll('[style*="will-change"]');
-        animatedElements.forEach(el => {
-            if (el.style.willChange) {
-                el.style.willChange = 'auto';
-            }
-        });
-    }, 5000);
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navContainer = document.querySelector('.nav-container');
-    const languageToggle = document.querySelector('.language-toggle');
-    
-    if (!navContainer.contains(event.target) && 
-        !languageToggle.contains(event.target) && 
-        mobileMenu.classList.contains('active')) {
-        closeMobileMenu();
+    // Background transition
+    if (scrollTop > 100) {
+        DOMCache.nav.style.background = 'rgba(35, 31, 32, 0.99)';
+        DOMCache.nav.style.backdropFilter = 'blur(40px)';
+        DOMCache.nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.2)';
+    } else {
+        DOMCache.nav.style.background = 'rgba(35, 31, 32, 0.98)';
+        DOMCache.nav.style.backdropFilter = 'blur(30px)';
+        DOMCache.nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
     }
-});
+    
+    lastScrollTop = scrollTop;
+}, 16);
 
-// Close mobile menu on window resize
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-        closeMobileMenu();
-    }
-});
-
-// Prevent initial auto-scroll
-window.scrollTo(0, 0);
-document.documentElement.scrollTop = 0;
-document.body.scrollTop = 0;
-
-// Disable scroll restoration
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
-
-// Block any auto-scrolling on page unload/reload
-window.addEventListener('beforeunload', function() {
-    window.scrollTo(0, 0);
-});
+// Combined scroll handler
+const handleScroll = throttle(() => {
+    toggleScrollToTopButton();
+    updateParallax();
+    handleNavbarScroll();
+}, 16);
 
 // Luxury scroll animations with intersection observer
 function initScrollAnimations() {
@@ -333,95 +326,124 @@ function initScrollAnimations() {
     });
 }
 
-// Enhanced parallax effect for hero with performance optimization
-let ticking = false;
-let heroImage, heroContent;
-
-function updateParallax() {
-    const scrolled = window.pageYOffset;
-    
-    // Cache DOM elements on first run
-    if (!heroImage) heroImage = document.querySelector('.hero-image');
-    if (!heroContent) heroContent = document.querySelector('.hero-content');
-    
-    if (scrolled < window.innerHeight) {
-        if (heroImage) {
-            const rate = scrolled * -0.2;
-            heroImage.style.transform = `translate3d(0, ${rate}px, 0) scale(${1.02 + scrolled * 0.0001})`;
-        }
-        
-        if (heroContent) {
-            const rate = scrolled * 0.1;
-            heroContent.style.transform = `translate3d(0, ${rate}px, 0)`;
-            heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.2;
-        }
-    }
-    
-    ticking = false;
+// Event handlers
+function handleLogoClick(e) {
+    e.preventDefault();
+    scrollToTop();
 }
 
-function requestParallaxUpdate() {
-    if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
+function handleAnchorClick(e) {
+    const href = this.getAttribute('href');
+    
+    // Only prevent default for logo/home links
+    if (href === '#' || href === '#home') {
+        e.preventDefault();
+        scrollToTop();
+        return;
+    }
+    
+    // Allow normal anchor navigation for other links
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+        const headerOffset = 120; // Account for fixed navigation
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
     }
 }
 
-window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
-
-// Smooth navigation background transition
-let lastScrollTop = 0;
-let navbarTimeout;
-let nav;
-
-window.addEventListener('scroll', () => {
-    // Cache nav element
-    if (!nav) nav = document.querySelector('nav');
+function handleMobileMenuClick(event) {
+    const navContainer = document.querySelector('.nav-container');
+    const languageToggle = document.querySelector('.language-toggle');
     
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Handle navbar hide/show
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scrolling down - hide navbar
-        nav.classList.add('nav-hidden');
-        nav.classList.remove('nav-visible');
-    } else if (scrollTop < lastScrollTop) {
-        // Scrolling up - show navbar
-        nav.classList.remove('nav-hidden');
-        nav.classList.add('nav-visible');
+    if (!navContainer?.contains(event.target) && 
+        !languageToggle?.contains(event.target) && 
+        DOMCache.mobileMenu?.classList.contains('active')) {
+        closeMobileMenu();
     }
-    
-    // Show navbar when at top of page
-    if (scrollTop <= 50) {
-        nav.classList.remove('nav-hidden');
-        nav.classList.add('nav-visible');
-    }
-    
-    // Background transition
-    if (scrollTop > 100) {
-        nav.style.background = 'rgba(35, 31, 32, 0.99)';
-        nav.style.backdropFilter = 'blur(40px)';
-        nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.2)';
-    } else {
-        nav.style.background = 'rgba(35, 31, 32, 0.98)';
-        nav.style.backdropFilter = 'blur(30px)';
-        nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-    }
-    
-    lastScrollTop = scrollTop;
-}, { passive: true });
-
-// Performance optimization: Debounce resize events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
 }
 
-// Smooth navigation background transition
+function handleMobileMenuLinkClick() {
+    closeMobileMenu();
+}
+
+function handleResize() {
+    if (window.innerWidth > 768) {
+        closeMobileMenu();
+    }
+}
+
+// Initialize on page load
+window.addEventListener('DOMContentLoaded', function() {
+    // Initialize DOM cache
+    DOMCache.init();
+    
+    // Set initial language if not already set
+    const body = document.body;
+    const html = document.documentElement;
+    if (!body.getAttribute('lang')) {
+        body.setAttribute('lang', 'en');
+        body.setAttribute('dir', 'ltr');
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+    }
+    
+    loadLanguagePreference();
+    initScrollAnimations();
+    
+    // Initialize navbar as visible
+    DOMCache.nav?.classList.add('nav-visible');
+    
+    // Initialize video player
+    if (DOMCache.video) {
+        initVideoPlayer();
+    }
+    
+    // Event listeners
+    document.querySelector('.nav-logo')?.addEventListener('click', handleLogoClick);
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', handleAnchorClick);
+    });
+    
+    // Mobile menu links
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', handleMobileMenuLinkClick);
+    });
+    
+    // Clean up will-change after animations complete
+    setTimeout(() => {
+        const animatedElements = document.querySelectorAll('[style*="will-change"]');
+        animatedElements.forEach(el => {
+            if (el.style.willChange) {
+                el.style.willChange = 'auto';
+            }
+        });
+    }, 5000);
+});
+
+// Event listeners with proper cleanup
+window.addEventListener('scroll', handleScroll, { passive: true });
+document.addEventListener('click', handleMobileMenuClick);
+window.addEventListener('resize', debounce(handleResize, 250));
+
+// Prevent initial auto-scroll
+window.scrollTo(0, 0);
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+
+// Disable scroll restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Block any auto-scrolling on page unload/reload
+window.addEventListener('beforeunload', function() {
+    window.scrollTo(0, 0);
+});
