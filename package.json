@@ -1,0 +1,13 @@
+{
+  "name": "prime-catering-website",
+  "version": "1.0.0",
+  "description": "PRIME by Asma - Catering & Food Services Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": ["catering", "food", "services", "website"],
+  "author": "PRIME by Asma",
+  "license": "MIT"
+}
