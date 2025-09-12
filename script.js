@@ -433,8 +433,26 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 document.addEventListener('click', handleMobileMenuClick);
 window.addEventListener('resize', debounce(handleResize, 250));
 
-// Language toggle event listener
-document.getElementById('languageToggle')?.addEventListener('click', toggleLanguage);
+// Initialize event listeners after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Language toggle event listener
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', toggleLanguage);
+    }
+    
+    // Mobile menu toggle event listener
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Scroll to top button event listener
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+    }
+});
 
 // Prevent initial auto-scroll
 window.scrollTo(0, 0);
