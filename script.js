@@ -194,6 +194,9 @@ window.addEventListener('DOMContentLoaded', function() {
         initVideoPlayer();
     }
     
+    // Initialize service galleries
+    initServiceGalleries();
+    
     // Logo click functionality
     document.querySelector('.nav-logo').addEventListener('click', function(e) {
         e.preventDefault();
@@ -425,4 +428,247 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
+}
+
+// Service Gallery Management
+class ServiceGallery {
+    constructor(galleryElement) {
+        this.gallery = galleryElement;
+        this.slides = galleryElement.querySelectorAll('.gallery-slide');
+        this.dots = galleryElement.querySelectorAll('.gallery-dot');
+        this.prevBtn = galleryElement.querySelector('.gallery-nav.prev');
+        this.nextBtn = galleryElement.querySelector('.gallery-nav.next');
+        this.pauseIndicator = galleryElement.querySelector('.gallery-pause-indicator');
+        
+        this.currentSlide = 0;
+        this.isPlaying = true;
+        this.isPaused = false;
+        this.autoPlayInterval = null;
+        this.transitionDuration = 4000; // 4 seconds between slides
+        
+        this.init();
+    }
+    
+    init() {
+        // Set up event listeners
+        this.setupEventListeners();
+        
+        // Start autoplay
+        this.startAutoPlay();
+        
+        // Preload images for smooth transitions
+        this.preloadImages();
+    }
+    
+    setupEventListeners() {
+        // Navigation buttons
+        this.prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.prevSlide();
+        });
+        
+        this.nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.nextSlide();
+        });
+        
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.goToSlide(index);
+            });
+        });
+        
+        // Pause on hover
+        this.gallery.addEventListener('mouseenter', () => {
+            this.pauseAutoPlay();
+        });
+        
+        this.gallery.addEventListener('mouseleave', () => {
+            this.resumeAutoPlay();
+        });
+        
+        // Keyboard navigation
+        this.gallery.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    this.prevSlide();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    this.nextSlide();
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    this.toggleAutoPlay();
+                    break;
+            }
+        });
+        
+        // Make gallery focusable for keyboard navigation
+        this.gallery.setAttribute('tabindex', '0');
+        this.gallery.setAttribute('role', 'region');
+        this.gallery.setAttribute('aria-label', 'Image gallery');
+    }
+    
+    preloadImages() {
+        // Preload all images in the gallery for smooth transitions
+        this.slides.forEach(slide => {
+            const img = slide.querySelector('img');
+            if (img && img.src) {
+                const preloadImg = new Image();
+                preloadImg.src = img.src;
+            }
+        });
+    }
+    
+    goToSlide(index) {
+        // Remove active class from current slide and dot
+        this.slides[this.currentSlide].classList.remove('active');
+        this.dots[this.currentSlide].classList.remove('active');
+        
+        // Update current slide index
+        this.currentSlide = index;
+        
+        // Add active class to new slide and dot
+        this.slides[this.currentSlide].classList.add('active');
+        this.dots[this.currentSlide].classList.add('active');
+        
+        // Update ARIA attributes for accessibility
+        this.slides.forEach((slide, i) => {
+            slide.setAttribute('aria-hidden', i !== this.currentSlide);
+        });
+        
+        // Restart autoplay timer
+        if (this.isPlaying && !this.isPaused) {
+            this.restartAutoPlay();
+        }
+    }
+    
+    nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % this.slides.length;
+        this.goToSlide(nextIndex);
+    }
+    
+    prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        this.goToSlide(prevIndex);
+    }
+    
+    startAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+        }
+        
+        this.autoPlayInterval = setInterval(() => {
+            if (this.isPlaying && !this.isPaused) {
+                this.nextSlide();
+            }
+        }, this.transitionDuration);
+    }
+    
+    restartAutoPlay() {
+        this.startAutoPlay();
+    }
+    
+    pauseAutoPlay() {
+        this.isPaused = true;
+        this.gallery.classList.add('paused');
+        
+        // Show pause indicator briefly
+        if (this.pauseIndicator) {
+            this.pauseIndicator.style.opacity = '1';
+            setTimeout(() => {
+                if (this.isPaused) {
+                    this.pauseIndicator.style.opacity = '0.7';
+                }
+            }, 1000);
+        }
+    }
+    
+    resumeAutoPlay() {
+        this.isPaused = false;
+        this.gallery.classList.remove('paused');
+        
+        // Hide pause indicator
+        if (this.pauseIndicator) {
+            this.pauseIndicator.style.opacity = '0';
+        }
+    }
+    
+    toggleAutoPlay() {
+        if (this.isPlaying) {
+            this.stopAutoPlay();
+        } else {
+            this.startAutoPlay();
+            this.isPlaying = true;
+        }
+    }
+    
+    stopAutoPlay() {
+        this.isPlaying = false;
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+    
+    destroy() {
+        // Clean up event listeners and intervals
+        this.stopAutoPlay();
+        // Remove event listeners would go here if needed
+    }
+}
+
+// Initialize all service galleries
+function initServiceGalleries() {
+    const galleries = document.querySelectorAll('.service-gallery');
+    const galleryInstances = [];
+    
+    galleries.forEach(gallery => {
+        const instance = new ServiceGallery(gallery);
+        galleryInstances.push(instance);
+    });
+    
+    // Store instances globally for potential cleanup
+    window.serviceGalleries = galleryInstances;
+    
+    console.log(`Initialized ${galleryInstances.length} service galleries`);
+}
+
+// Handle visibility change to pause/resume galleries when tab is not visible
+document.addEventListener('visibilitychange', function() {
+    if (window.serviceGalleries) {
+        window.serviceGalleries.forEach(gallery => {
+            if (document.hidden) {
+                gallery.pauseAutoPlay();
+            } else {
+                gallery.resumeAutoPlay();
+            }
+        });
+    }
+});
+
+// Cleanup galleries on page unload
+window.addEventListener('beforeunload', function() {
+    if (window.serviceGalleries) {
+        window.serviceGalleries.forEach(gallery => {
+            gallery.destroy();
+        });
+    }
+});
+
+// Handle reduced motion preference
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // User prefers reduced motion, disable autoplay
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.serviceGalleries) {
+            window.serviceGalleries.forEach(gallery => {
+                gallery.stopAutoPlay();
+                gallery.transitionDuration = 0; // Instant transitions
+            });
+        }
+    });
 }

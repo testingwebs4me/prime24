@@ -1010,6 +1010,7 @@ body[lang="ar"] .service-content {
     box-shadow: 0 32px 120px rgba(35, 31, 32, 0.15);
     transition: all 0.4s ease;
     will-change: transform, box-shadow;
+    height: 450px;
 }
 
 .service-image::before {
@@ -1050,9 +1051,41 @@ body[lang="ar"] .service-content {
     box-shadow: 0 48px 160px rgba(35, 31, 32, 0.25);
 }
 
-.service-image img {
+/* Gallery Container */
+.service-gallery {
+    position: relative;
     width: 100%;
-    height: 450px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+/* Gallery Slides */
+.gallery-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.gallery-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 30px;
     transition: all 0.4s ease;
@@ -1060,9 +1093,114 @@ body[lang="ar"] .service-content {
     will-change: transform, filter;
 }
 
-.service-item:hover .service-image img {
+.service-item:hover .gallery-slide img {
     transform: scale(1.05);
     filter: brightness(1.15) contrast(1.1) saturate(1.1);
+}
+
+/* Gallery Navigation Dots */
+.gallery-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-image:hover .gallery-dots {
+    opacity: 1;
+}
+
+.gallery-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.gallery-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.gallery-dot.active {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Gallery Navigation Arrows */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(15px);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.service-image:hover .gallery-nav {
+    opacity: 1;
+}
+
+.gallery-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-nav.prev {
+    left: 15px;
+}
+
+.gallery-nav.next {
+    right: 15px;
+}
+
+/* Pause indicator */
+.gallery-pause-indicator {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    font-family: 'TestGemola', Arial, sans-serif;
+}
+
+.service-gallery.paused .gallery-pause-indicator {
+    opacity: 1;
+}
+.service-image img {
+    display: none; /* Hide original single image */
 }
 
 .service-content h3 {
@@ -1632,6 +1770,38 @@ body[lang="ar"] .mobile-menu .lang-ar {
 
 /* Mobile Video Controls - Always Visible */
 @media (max-width: 768px) {
+    /* Gallery Mobile Styles */
+    .gallery-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+    
+    .gallery-nav.prev {
+        left: 10px;
+    }
+    
+    .gallery-nav.next {
+        right: 10px;
+    }
+    
+    .gallery-dots {
+        bottom: 15px;
+        gap: 10px;
+    }
+    
+    .gallery-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .gallery-pause-indicator {
+        top: 10px;
+        right: 10px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
     .video-section {
         padding: 6rem 0;
         margin-top: 4rem;
