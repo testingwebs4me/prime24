@@ -1200,7 +1200,13 @@ body[lang="ar"] .service-content {
     opacity: 1;
 }
 .service-image img {
-    display: none; /* Hide original single image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    filter: brightness(1.05) contrast(1.05) saturate(1.05);
+    will-change: transform, filter;
 }
 
 .service-content h3 {
