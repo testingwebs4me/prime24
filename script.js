@@ -433,6 +433,9 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 document.addEventListener('click', handleMobileMenuClick);
 window.addEventListener('resize', debounce(handleResize, 250));
 
+// Language toggle event listener
+document.getElementById('languageToggle')?.addEventListener('click', toggleLanguage);
+
 // Prevent initial auto-scroll
 window.scrollTo(0, 0);
 document.documentElement.scrollTop = 0;
