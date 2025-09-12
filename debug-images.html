@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Debug Test</title>
+    <title>Image Debug Test - Updated Images</title>
     <style>
         .test-image {
             width: 200px;
@@ -9,6 +9,7 @@
             border: 2px solid red;
             margin: 10px;
             object-fit: cover;
+            display: inline-block;
         }
         .image-info {
             font-family: monospace;
@@ -16,38 +17,190 @@
             padding: 10px;
             margin: 10px 0;
         }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-item {
+            text-align: center;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
     </style>
 </head>
 <body>
-    <h1>Image Loading Test</h1>
+    <h1>Updated Image Loading Test</h1>
     
-    <div class="image-info">Testing: images/catering_service.jpeg</div>
-    <img src="images/catering_service.jpeg" alt="Catering Service" class="test-image" onload="console.log('✅ Loaded: catering_service.jpeg')" onerror="console.log('❌ Failed: catering_service.jpeg')">
+    <div class="image-info">Testing all new image files (image_01.jpg through image_16.jpeg)</div>
     
-    <div class="image-info">Testing: images/Photo Apr 06, 3 46 52 PM.jpg</div>
-    <img src="images/Photo Apr 06, 3 46 52 PM.jpg" alt="Photo 1" class="test-image" onload="console.log('✅ Loaded: Photo Apr 06, 3 46 52 PM.jpg')" onerror="console.log('❌ Failed: Photo Apr 06, 3 46 52 PM.jpg')">
-    
-    <div class="image-info">Testing: images/Photo Apr 06, 3 47 25 PM.jpg</div>
-    <img src="images/Photo Apr 06, 3 47 25 PM.jpg" alt="Photo 2" class="test-image" onload="console.log('✅ Loaded: Photo Apr 06, 3 47 25 PM.jpg')" onerror="console.log('❌ Failed: Photo Apr 06, 3 47 25 PM.jpg')">
-    
-    <div class="image-info">Testing: images/WhatsApp Image 1447-03-13 at 18.00.51.jpeg</div>
-    <img src="images/WhatsApp Image 1447-03-13 at 18.00.51.jpeg" alt="WhatsApp 1" class="test-image" onload="console.log('✅ Loaded: WhatsApp Image 1447-03-13 at 18.00.51.jpeg')" onerror="console.log('❌ Failed: WhatsApp Image 1447-03-13 at 18.00.51.jpeg')">
-    
-    <div class="image-info">Testing: images/WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg</div>
-    <img src="images/WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg" alt="WhatsApp 2" class="test-image" onload="console.log('✅ Loaded: WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg')" onerror="console.log('❌ Failed: WhatsApp Image 1447-03-13 at 18.00.52 (1).jpeg')">
+    <div class="image-grid">
+        <div class="image-item">
+            <div>Hero Background (image_16.jpeg)</div>
+            <img src="images/image_16.jpeg" alt="Hero Background" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-16"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Catering 1 (image_01.jpg)</div>
+            <img src="images/image_01.jpg" alt="Catering 1" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-1"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Catering 2 (image_02.jpg)</div>
+            <img src="images/image_02.jpg" alt="Catering 2" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-2"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Catering 3 (image_03.jpg)</div>
+            <img src="images/image_03.jpg" alt="Catering 3" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-3"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Catering 4 (image_04.jpg)</div>
+            <img src="images/image_04.jpg" alt="Catering 4" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-4"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Catering 5 (image_05.jpg)</div>
+            <img src="images/image_05.jpg" alt="Catering 5" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-5"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>White Label 1 (image_06.jpg)</div>
+            <img src="images/image_06.jpg" alt="White Label 1" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-6"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>White Label 2 (image_07.jpg)</div>
+            <img src="images/image_07.jpg" alt="White Label 2" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-7"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>White Label 3 (image_08.jpg)</div>
+            <img src="images/image_08.jpg" alt="White Label 3" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-8"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>White Label 4 (image_09.jpg)</div>
+            <img src="images/image_09.jpg" alt="White Label 4" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-9"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>White Label 5 (image_10.jpg)</div>
+            <img src="images/image_10.jpg" alt="White Label 5" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-10"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Hotels & Cafés 1 (image_11.jpg)</div>
+            <img src="images/image_11.jpg" alt="Hotels Cafes 1" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-11"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Hotels & Cafés 2 (image_12.jpeg)</div>
+            <img src="images/image_12.jpeg" alt="Hotels Cafes 2" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-12"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Hotels & Cafés 3 (image_13.jpeg)</div>
+            <img src="images/image_13.jpeg" alt="Hotels Cafes 3" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-13"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Hotels & Cafés 4 (image_14.jpeg)</div>
+            <img src="images/image_14.jpeg" alt="Hotels Cafes 4" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-14"></div>
+        </div>
+        
+        <div class="image-item">
+            <div>Hotels & Cafés 5 (image_15.jpeg)</div>
+            <img src="images/image_15.jpeg" alt="Hotels Cafes 5" class="test-image" 
+                 onload="showStatus(this, 'success', '✅ Loaded')" 
+                 onerror="showStatus(this, 'error', '❌ Failed')">
+            <div class="status" id="status-15"></div>
+        </div>
+    </div>
     
     <script>
+        function showStatus(img, type, message) {
+            const statusDiv = img.nextElementSibling;
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+        }
+        
         // Check if images are loading
         window.addEventListener('load', () => {
-            console.log('Page loaded, checking images...');
+            console.log('Page loaded, checking all images...');
             const images = document.querySelectorAll('.test-image');
+            let loadedCount = 0;
+            let failedCount = 0;
+            
             images.forEach((img, index) => {
                 if (img.complete && img.naturalHeight !== 0) {
                     console.log(`✅ Image ${index + 1} loaded successfully`);
+                    loadedCount++;
                 } else {
                     console.log(`❌ Image ${index + 1} failed to load`);
+                    failedCount++;
                 }
             });
+            
+            console.log(`Summary: ${loadedCount} loaded, ${failedCount} failed`);
         });
     </script>
 </body>
