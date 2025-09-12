@@ -1856,6 +1856,40 @@ body[lang="ar"] .mobile-menu .lang-ar {
 }
 
 @media (max-width: 480px) {
+    /* Gallery Extra Small Mobile */
+    .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .gallery-dots {
+        bottom: 12px;
+        gap: 8px;
+    }
+    
+    .gallery-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .gallery-pause-indicator {
+        top: 8px;
+        right: 8px;
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+    
+    .language-toggle {
+        top: 12px;
+        right: 70px;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+        min-width: 50px;
+        min-height: 40px;
+        border-radius: 20px;
+    }
+
     .video-container {
         margin: 0 20px;
         border-radius: 20px;
@@ -2181,16 +2215,6 @@ body[lang="ar"] .mobile-menu .lang-ar {
     body[lang="ar"] .scroll-to-top {
         right: auto;
         left: 25px;
-    }
-
-    .language-toggle {
-        top: 12px;
-        right: 70px;
-        padding: 8px 14px;
-        font-size: 0.85rem;
-        min-width: 50px;
-        min-height: 40px;
-        border-radius: 20px;
     }
 
     .nav-logo {
