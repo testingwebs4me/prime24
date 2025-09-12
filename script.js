@@ -453,24 +453,11 @@ class ServiceGallery {
         // Set up event listeners
         this.setupEventListeners();
         
-        // Force initial display for mobile
-        this.slides.forEach((slide, index) => {
-            slide.style.display = 'block';
-            slide.style.visibility = 'visible';
-            const img = slide.querySelector('img');
-            if (img) {
-                img.style.display = 'block';
-                img.style.visibility = 'visible';
-                img.style.opacity = '1';
-            }
-            if (index === 0) {
-                slide.style.opacity = '1';
-                slide.style.zIndex = '2';
-            } else {
-                slide.style.opacity = '0';
-                slide.style.zIndex = '1';
-            }
-        });
+        // Initialize first slide as active
+        if (this.slides.length > 0) {
+            this.slides[0].classList.add('active');
+            this.dots[0].classList.add('active');
+        }
         
         // Start autoplay
         this.startAutoPlay();
@@ -554,30 +541,6 @@ class ServiceGallery {
         // Add active class to new slide and dot
         this.slides[this.currentSlide].classList.add('active');
         this.dots[this.currentSlide].classList.add('active');
-        
-        // Force display for mobile
-        this.slides.forEach((slide, i) => {
-            if (i === this.currentSlide) {
-                slide.style.display = 'block';
-                slide.style.visibility = 'visible';
-                slide.style.opacity = '1';
-                slide.style.zIndex = '2';
-                const img = slide.querySelector('img');
-                if (img) {
-                    img.style.display = 'block';
-                    img.style.visibility = 'visible';
-                    img.style.opacity = '1';
-                }
-            } else {
-                slide.style.opacity = '0';
-                slide.style.zIndex = '1';
-            }
-        });
-        
-        // Update ARIA attributes for accessibility
-        this.slides.forEach((slide, i) => {
-            slide.setAttribute('aria-hidden', i !== this.currentSlide);
-        });
         
         // Restart autoplay timer
         if (this.isPlaying && !this.isPaused) {

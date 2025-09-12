@@ -1841,6 +1841,14 @@ body[lang="ar"] .mobile-menu .lang-ar {
         font-size: 11px;
     }
     
+    .service-gallery {
+        height: 300px;
+    }
+    
+    .service-item {
+        flex-direction: column;
+    }
+    
     .video-section {
         padding: 6rem 0;
         margin-top: 4rem;
@@ -1918,6 +1926,10 @@ body[lang="ar"] .mobile-menu .lang-ar {
         right: 8px;
         padding: 5px 8px;
         font-size: 10px;
+    }
+    
+    .service-gallery {
+        height: 250px;
     }
     
     .language-toggle {
@@ -2253,229 +2265,4 @@ body[lang="ar"] .mobile-menu .lang-ar {
         line-height: 1.8;
     }
 
-    .contact-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 0 20px;
-    }
-
-    .contact-item {
-        padding: 2rem 2.5rem;
-        width: 100%;
-        max-width: 400px;
-        justify-content: center;
-    }
-
-    .contact-text {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Scroll to Top Button Extra Small Mobile */
-    .scroll-to-top {
-        bottom: 25px;
-        right: 25px;
-        width: 52px;
-        height: 52px;
-        font-size: 18px;
-    }
-
-    .scroll-to-top::after {
-        font-size: 20px;
-    }
-
-    body[lang="ar"] .scroll-to-top {
-        right: auto;
-        left: 25px;
-    }
-
-    .nav-logo {
-        height: 55px;
-    }
-
-    .mobile-menu {
-        top: 75px;
-        padding: 1.5rem;
-    }
-
-    /* Hero Extra Small Mobile */
-    .hero {
-        padding-top: 0;
-        height: 90vh;
-        min-height: 600px;
-    }
-
-    .hero-title-main {
-        font-size: 3.8rem;
-        letter-spacing: 4px;
-    }
-
-    .hero-title-sub {
-        font-size: 1.6rem;
-        letter-spacing: 2px;
-    }
-
-    .hero-description {
-        font-size: 1.25rem;
-        line-height: 1.7;
-    }
-
-    .cta-button {
-        padding: 1.3rem 3rem;
-        font-size: 1.1rem;
-        min-height: 52px;
-        max-width: 320px;
-    }
-
-    .hero-content {
-        padding: 0 1.5rem;
-    }
-
-    .hero-text {
-        gap: 2rem;
-    }
-
-    .hero-scroll-indicator {
-        bottom: 25px;
-    }
-
-    .scroll-arrow {
-        width: 36px;
-        height: 36px;
-    }
-
-    .section-title {
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
-    }
-
-    .service-content h3 {
-        font-size: 1.9rem;
-    }
-
-    .service-content p {
-        font-size: 1.05rem;
-        color: #231F20;
-    }
-
-    .service-features li {
-        font-size: 1rem;
-        color: #231F20;
-    }
-
-    .contact h2 {
-        font-size: 2.2rem;
-    }
-
-    .contact p {
-        font-size: 1.1rem;
-    }
-
-    .service-image img {
-        height: 100% !important;
-        width: 100% !important;
-        object-fit: cover !important;
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        border-radius: 15px;
-    }
-    
-    .service-image {
-        height: 300px;
-        display: block !important;
-        visibility: visible !important;
-        background: #f1f3f4;
-        border: 1px solid #dadce0;
-    }
-    
-    .gallery-slides {
-        display: block !important;
-        height: 100%;
-    }
-    
-    .gallery-slide {
-        display: block !important;
-        visibility: visible !important;
-    }
-    
-    .gallery-slide img {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        max-width: 100%;
-        height: auto;
-        min-height: 300px;
-        object-fit: cover;
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        margin: 0 auto;
-        max-width: calc(100% - 30px);
-        display: block !important;
-        visibility: visible !important;
-    }
-    
-    .service-gallery {
-        height: 100%;
-        background: #ffffff;
-        border-radius: 15px;
-    }
-    
-    .gallery-slides {
-        height: 100%;
-    }
-    
-    .gallery-slide {
-        height: 100%;
-        width: 100%;
-    }
-
-    .contact-item {
-        padding: 1.5rem 2rem;
-    }
-
-    .contact-text {
-        font-size: 1.1rem;
-    }
-        display: block !important;
-        visibility: visible !important;
-        background: #e9ecef;
-        border: 2px solid #dee2e6;
-    }
-    
-    .gallery-slides {
-        display: block !important;
-        visibility: visible !important;
-        height: 100%;
-    }
-    
-    .gallery-slide {
-        display: block !important;
-        visibility: visible !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .gallery-slide img {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .gallery-slide.active {
-        opacity: 1 !important;
-        display: block !important;
-        visibility: visible !important;
-        z-index: 2;
-    }
-}
+    .contact-info
