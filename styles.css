@@ -1002,7 +1002,7 @@ body[lang="ar"] .service-content {
     text-align: right;
 }
 
-/* MOBILE-FIRST GALLERY SYSTEM */
+/* SIMPLE SERVICE IMAGES */
 .service-image {
     flex: 1;
     max-width: 600px;
@@ -1012,7 +1012,6 @@ body[lang="ar"] .service-content {
     transition: all 0.4s ease;
     will-change: transform, box-shadow;
     height: 450px;
-    background: #f5f5f5;
     overflow: hidden;
 }
 
@@ -1021,116 +1020,13 @@ body[lang="ar"] .service-content {
     box-shadow: 0 48px 160px rgba(35, 31, 32, 0.25);
 }
 
-/* Simple Mobile Gallery */
-.mobile-gallery {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    overflow: hidden;
-    background: #ffffff;
-}
-
-.mobile-gallery img {
+.service-main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 30px;
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.mobile-gallery img.active {
-    opacity: 1;
-    z-index: 2;
-}
-
-.mobile-gallery img:first-child {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Gallery Navigation */
-.gallery-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    opacity: 0;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(15px);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.service-image:hover .gallery-nav {
-    opacity: 1;
-}
-
-.gallery-nav:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.gallery-nav.prev {
-    left: 15px;
-}
-
-.gallery-nav.next {
-    right: 15px;
-}
-
-/* Gallery Dots */
-.gallery-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.service-image:hover .gallery-dots {
-    opacity: 1;
-}
-
-.gallery-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-}
-
-.gallery-dot:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
-}
-
-.gallery-dot.active {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s ease;
 }
 
 .service-content h3 {
@@ -1903,74 +1799,17 @@ body[lang="ar"] .mobile-menu .lang-ar {
         right: 1rem;
     }
 
-    /* MOBILE GALLERY FIXES */
+    /* MOBILE SERVICE IMAGES */
     .service-image {
         max-width: 100%;
         padding: 0 20px;
         height: 300px;
         margin: 0 auto;
-        background: #f8f9fa;
-        border: none;
         box-shadow: 0 16px 48px rgba(35, 31, 32, 0.1);
     }
 
-    .mobile-gallery {
-        height: 100%;
-        width: 100%;
-        background: #ffffff;
+    .service-main-image {
         border-radius: 20px;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .mobile-gallery img {
-        height: 100%;
-        width: 100%;
-        border-radius: 20px;
-        object-fit: cover;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .mobile-gallery img.active {
-        opacity: 1;
-        z-index: 2;
-    }
-
-    .mobile-gallery img:first-child {
-        opacity: 1;
-        z-index: 2;
-    }
-
-    /* Mobile Gallery Navigation */
-    .gallery-nav {
-        width: 44px;
-        height: 44px;
-        font-size: 18px;
-        opacity: 1;
-    }
-    
-    .gallery-nav.prev {
-        left: 10px;
-    }
-    
-    .gallery-nav.next {
-        right: 10px;
-    }
-    
-    .gallery-dots {
-        bottom: 15px;
-        gap: 10px;
-        opacity: 1;
-    }
-    
-    .gallery-dot {
-        width: 10px;
-        height: 10px;
     }
 
     /* Video Mobile */
@@ -2111,21 +1950,5 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .service-image {
         height: 250px;
         padding: 0 15px;
-    }
-    
-    .gallery-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-    
-    .gallery-dots {
-        bottom: 12px;
-        gap: 8px;
-    }
-    
-    .gallery-dot {
-        width: 8px;
-        height: 8px;
     }
 }
