@@ -1210,9 +1210,9 @@ body[lang="ar"] .service-content {
     transition: all 0.4s ease;
     filter: brightness(1.05) contrast(1.05) saturate(1.05);
     will-change: transform, filter;
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .service-content h3 {
