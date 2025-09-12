@@ -1011,6 +1011,10 @@ body[lang="ar"] .service-content {
     transition: all 0.4s ease;
     will-change: transform, box-shadow;
     height: 450px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-image::before {
@@ -1058,6 +1062,8 @@ body[lang="ar"] .service-content {
     height: 100%;
     overflow: hidden;
     border-radius: 30px;
+    background: #ffffff;
+    min-height: 400px;
 }
 
 /* Gallery Slides */
@@ -1065,6 +1071,7 @@ body[lang="ar"] .service-content {
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: inherit;
 }
 
 .gallery-slide {
@@ -1076,6 +1083,10 @@ body[lang="ar"] .service-content {
     opacity: 0;
     transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-slide.active {
@@ -1092,8 +1103,11 @@ body[lang="ar"] .service-content {
     filter: brightness(1.05) contrast(1.05) saturate(1.05);
     will-change: transform, filter;
     display: block;
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .service-item:hover .gallery-slide img {
@@ -2168,17 +2182,44 @@ body[lang="ar"] .mobile-menu .lang-ar {
     .service-image {
         max-width: 100%;
         padding: 0 20px;
-        height: 300px;
+        height: 350px;
+        margin: 0 auto;
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
     }
 
+    .service-gallery {
+        height: 100%;
+        width: 100%;
+        background: #ffffff;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    
+    .gallery-slides {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    
+    .gallery-slide {
+        height: 100%;
+        width: 100%;
+    }
+    
     .gallery-slide img {
-        height: 300px;
+        height: 100% !important;
+        width: 100% !important;
         border-radius: 20px;
         object-fit: cover;
-        width: 100%;
-        display: block;
-        opacity: 1;
-        visibility: visible;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
     }
 
     /* Contact Mobile */
@@ -2320,7 +2361,36 @@ body[lang="ar"] .mobile-menu .lang-ar {
     }
 
     .service-image img {
-        height: 280px;
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        border-radius: 15px;
+    }
+    
+    .service-image {
+        height: 300px;
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        margin: 0 auto;
+        max-width: calc(100% - 30px);
+    }
+    
+    .service-gallery {
+        height: 100%;
+        background: #ffffff;
+        border-radius: 15px;
+    }
+    
+    .gallery-slides {
+        height: 100%;
+    }
+    
+    .gallery-slide {
+        height: 100%;
+        width: 100%;
     }
 
     .contact-item {
